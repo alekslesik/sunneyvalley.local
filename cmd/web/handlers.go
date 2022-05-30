@@ -63,7 +63,7 @@ func createSnippet(w http.ResponseWriter, r *http.Request)  {
 	// if not method POST
 	if r.Method != http.MethodPost {
 		w.Header().Set("Allow", http.MethodPost)
-		http.Error(w, "Method fobidden!", 405)
+		http.Error(w, "Method fobidden!", http.StatusMethodNotAllowed)
 		return
 	}
 	w.Write([]byte("Creating a new note"))
