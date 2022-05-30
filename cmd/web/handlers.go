@@ -9,8 +9,8 @@ import (
 )
 
 // home page handler
-func home(w http.ResponseWriter, r *http.Request)  {
-	
+func home(w http.ResponseWriter, r *http.Request) {
+
 	if r.URL.Path != "/" {
 		http.NotFound(w, r)
 		return
@@ -32,7 +32,7 @@ func home(w http.ResponseWriter, r *http.Request)  {
 		return
 	}
 
-	// then use method Exeecute for writing content of pattern 
+	// then use method Exeecute for writing content of pattern
 	// in HTTP response body
 	err = ts.Execute(w, nil)
 	if err != nil {
@@ -42,7 +42,7 @@ func home(w http.ResponseWriter, r *http.Request)  {
 }
 
 // display note handler
-func showSnippet(w http.ResponseWriter, r *http.Request)  {
+func showSnippet(w http.ResponseWriter, r *http.Request) {
 
 	// extract value of parameter id from URL
 	// and try to convert string to integer using func Atoi
@@ -59,7 +59,7 @@ func showSnippet(w http.ResponseWriter, r *http.Request)  {
 }
 
 // create note handler
-func createSnippet(w http.ResponseWriter, r *http.Request)  {
+func createSnippet(w http.ResponseWriter, r *http.Request) {
 	// if not method POST
 	if r.Method != http.MethodPost {
 		w.Header().Set("Allow", http.MethodPost)
