@@ -47,34 +47,31 @@ func Home(app *config.Application) http.HandlerFunc  {
 
 // display note handler
 func ShowSnippet(app *config.Application) http.HandlerFunc {
-
 	return func (w http.ResponseWriter, r *http.Request)  {
-	// extract value of parameter id from URL
-	// and try to convert string to integer using func Atoi
-	id, err := strconv.Atoi(r.URL.Query().Get("id"))
+		// extract value of parameter id from URL
+		// and try to convert string to integer using func Atoi
+		id, err := strconv.Atoi(r.URL.Query().Get("id"))
 
-	// if err, return 404
-	if err != nil || id < 0 {
-		http.NotFound(w, r)
-		return
-	}
+		// if err, return 404
+		if err != nil || id < 0 {
+			http.NotFound(w, r)
+			return
+		}
 
-	// input id value to response
-	fmt.Fprintf(w, "Displaying chosen note with ID %d...", id)
-
+		// input id value to response
+		fmt.Fprintf(w, "Displaying chosen note with ID %d...", id)
 	}
 }
 
 // create note handler
 func CreateSnippet(app *config.Application) http.HandlerFunc {
-
 	return func(w http.ResponseWriter, r *http.Request)  {
 		// if not method POST
-	if r.Method != http.MethodPost {
-		w.Header().Set("Allow", http.MethodPost)
-		http.Error(w, "Method fobidden!", http.StatusMethodNotAllowed)
-		return
-	}
-	w.Write([]byte("Creating a new note"))
+		if r.Method != http.MethodPost {
+			w.Header().Set("Allow", http.MethodPost)
+			http.Error(w, "Method fobidden!", http.StatusMethodNotAllowed)
+			return
+		}
+		w.Write([]byte("Creating a new note"))
 	}
 }

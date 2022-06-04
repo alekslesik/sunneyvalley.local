@@ -10,53 +10,26 @@ import (
 	"golangs.org/snippetbox/pkg/config"
 )
 
-// create struct for containing dependences all web app
-// type application struct {
-// 	errorLog *log.Logger
-// 	infoLog *log.Logger
-// }
-
 func main() {
 	// log file
 	f, err := os.OpenFile("info.log", os.O_RDWR | os.O_CREATE, 0666)
-
-	app := &config.Application{
-		ErrorLog: log.New(f, "ERROR\t", log.Ldate | log.Ltime | log.Lshortfile),
-		InfoLog: log.New(f, "INFO\t", log.Ldate | log.Ltime),
-	}
-
-	// create a new flag cmd
-	addr := flag.String("addr", ":4000", "Net address HTTP")
-
-	// call func for extract flag from cmd
-	flag.Parse()
-
-
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer f.Close()
 
-	// create logger for writing info messages
-	// infoLog := log.New(f, "INFO\t", log.Ldate | log.Ltime)
-
-	// create logger for writing error messages
-	// errorLog := log.New(f, "ERROR\t", log.Ldate | log.Ltime | log.Lshortfile)
-
-	// initialise new struct with application dependences
-	// app := &application{
-	// 	errorLog: errorLog,
-	// 	infoLog: infoLog,
-	// }
+	// set config.Application
+	app := &config.Application{
+		ErrorLog: log.New(f, "ERROR\t", log.Ldate | log.Ltime | log.Lshortfile),
+		InfoLog: log.New(f, "INFO\t", log.Ldate | log.Ltime),
+	}
 
 	// initialisation new router
 	mux := http.NewServeMux()
-
 	// registaration handlers
 	mux.HandleFunc("/", Home(app))
 	mux.HandleFunc("/snippet", ShowSnippet(app))
 	mux.HandleFunc("/snippet/create", CreateSnippet(app))
-
 
 	// handle http-requests to static files from "/static"
 	// fileServer := http.FileServer(neuteredFileSystem{http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static")})
@@ -65,6 +38,11 @@ func main() {
 	// use for registration handle all requests, begining with "/static/"
 	// mux.Handle("/static", http.NotFoundHandler())
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
+
+	// create a new flag cmd
+	addr := flag.String("addr", ":4000", "Net address HTTP")
+	// call func for extract flag from cmd
+	flag.Parse()
 
 	// initialise new struct, set fields Addr and Handler
 	srv := &http.Server{
