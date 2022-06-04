@@ -4,6 +4,7 @@ import (
 	"flag"
 	"log"
 	"net/http"
+	"os"
 	"path/filepath"
 )
 
@@ -14,6 +15,18 @@ func main() {
 
 	// call func for extract flag from cmd
 	flag.Parse()
+
+	f, err := os.OpenFile("info.log", os.O_RDWR | os.O_CREATE, 0666)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer f.Close()
+
+	// create logger for writing info messages
+	infoLog := log.New(f, "INFO\t", log.Ldate | log.Ltime)
+
+	// create logger for writing error messages
+	errorLog := log.New(f, "ERROR\t", log.Ldate | log.Ltime | log.Lshortfile)
 
 	// initialisation new router
 	mux := http.NewServeMux()
@@ -32,13 +45,19 @@ func main() {
 	// mux.Handle("/static", http.NotFoundHandler())
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
+	// initialise new struct, set fields Addr and Handler
+	srv := &http.Server{
+		Addr:     *addr,
+		ErrorLog: errorLog,
+		Handler:  mux,
+	}
+
+	// apply created loggers
+	infoLog.Printf("Web server start on %s", *addr)
+
 	// uses ListenAndServe to run a new server
-	// we hang over two parameters : TCP adress for listening, and created router
-	log.Printf("Web server start on %s", *addr)
-
-	err := http.ListenAndServe(*addr, mux)
-
-	log.Fatal(err)
+	err = srv.ListenAndServe()
+	errorLog.Fatal(err)
 }
 
 type neuteredFileSystem struct {
