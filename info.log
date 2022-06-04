@@ -1,1 +1,2 @@
-INFO	2022/06/04 18:48:44 Web server start on :4000
+INFO	2022/06/04 19:44:24 Web server start on :4000
+ERROR	2022/06/04 19:44:35 handlers.go:32: open C:/Users/Lesik/go/src/snippetbox/ui/html/home.page.html: The system cannot find the file specified.
