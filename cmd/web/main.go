@@ -1,12 +1,19 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 	"path/filepath"
 )
 
 func main() {
+
+	// create a new flag cmd
+	addr := flag.String("addr", ":4000", "Net address HTTP")
+
+	// call func for extract flag from cmd
+	flag.Parse()
 
 	// initialisation new router
 	mux := http.NewServeMux()
@@ -18,17 +25,18 @@ func main() {
 
 
 	// handle http-requests to static files from "/static"
-	fileServer := http.FileServer(neuteredFileSystem{http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static")})
+	// fileServer := http.FileServer(neuteredFileSystem{http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static")})
+	fileServer := http.FileServer(http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static"))
 
 	// use for registration handle all requests, begining with "/static/"
-	mux.Handle("/static", http.NotFoundHandler())
+	// mux.Handle("/static", http.NotFoundHandler())
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
 	// uses ListenAndServe to run a new server
 	// we hang over two parameters : TCP adress for listening, and created router
-	log.Println("Web server start on 127.0.0.1:4000")
+	log.Printf("Web server start on %s", *addr)
 
-	err := http.ListenAndServe(":4000", mux)
+	err := http.ListenAndServe(*addr, mux)
 
 	log.Fatal(err)
 }
