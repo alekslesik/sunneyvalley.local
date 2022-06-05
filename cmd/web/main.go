@@ -6,57 +6,46 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-
-	"golangs.org/snippetbox/pkg/config"
 )
 
+type application struct {
+	errorLog *log.Logger
+	infoLog  *log.Logger
+}
+
 func main() {
+
+	// create a new flag cmd
+	addr := flag.String("addr", ":4000", "Net address HTTP")
+	// call func for extract flag from cmd
+
+	flag.Parse()
 	// log file
-	f, err := os.OpenFile("info.log", os.O_RDWR | os.O_CREATE, 0666)
+	f, err := os.OpenFile("info.log", os.O_RDWR|os.O_CREATE, 0666)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer f.Close()
 
-	// set config.Application
-	app := &config.Application{
-		ErrorLog: log.New(f, "ERROR\t", log.Ldate | log.Ltime | log.Lshortfile),
-		InfoLog: log.New(f, "INFO\t", log.Ldate | log.Ltime),
+	// set application
+	app := application{
+		errorLog: log.New(f, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile),
+		infoLog:  log.New(f, "INFO\t", log.Ldate|log.Ltime),
 	}
-
-	// initialisation new router
-	mux := http.NewServeMux()
-	// registaration handlers
-	mux.HandleFunc("/", Home(app))
-	mux.HandleFunc("/snippet", ShowSnippet(app))
-	mux.HandleFunc("/snippet/create", CreateSnippet(app))
-
-	// handle http-requests to static files from "/static"
-	// fileServer := http.FileServer(neuteredFileSystem{http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static")})
-	fileServer := http.FileServer(http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static"))
-
-	// use for registration handle all requests, begining with "/static/"
-	// mux.Handle("/static", http.NotFoundHandler())
-	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
-
-	// create a new flag cmd
-	addr := flag.String("addr", ":4000", "Net address HTTP")
-	// call func for extract flag from cmd
-	flag.Parse()
 
 	// initialise new struct, set fields Addr and Handler
 	srv := &http.Server{
 		Addr:     *addr,
-		ErrorLog: app.ErrorLog,
-		Handler:  mux,
+		ErrorLog: app.errorLog,
+		Handler:  app.routes(),
 	}
 
 	// apply created loggers
-	app.InfoLog.Printf("Web server start on %s", *addr)
+	app.infoLog.Printf("Web server start on %s", *addr)
 
 	// uses ListenAndServe to run a new server
 	err = srv.ListenAndServe()
-	app.ErrorLog.Fatal(err)
+	app.errorLog.Fatal(err)
 }
 
 type neuteredFileSystem struct {
