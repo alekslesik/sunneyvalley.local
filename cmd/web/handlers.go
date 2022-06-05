@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"net/http"
 	"strconv"
 	"text/template"
@@ -14,7 +13,7 @@ import (
 func Home(app *config.Application) http.HandlerFunc  {
 	return func(w http.ResponseWriter, r *http.Request)  {
 		if r.URL.Path != "/" {
-			http.NotFound(w, r)
+			app.NotFound(w)
 			return
 		}
 
@@ -29,8 +28,7 @@ func Home(app *config.Application) http.HandlerFunc  {
 		// use ParseFiles for reading pattern file
 		ts, err := template.ParseFiles(files...)
 		if err != nil {
-			app.ErrorLog.Println(err.Error())
-			http.Error(w, "Internal Server Error", 500)
+			app.ServerError(w, err)
 			return
 		}
 
@@ -38,8 +36,7 @@ func Home(app *config.Application) http.HandlerFunc  {
 		// in HTTP response body
 		err = ts.Execute(w, nil)
 		if err != nil {
-			log.Println(err.Error())
-			http.Error(w, "Internal Server Error", 500)
+			app.ServerError(w, err)
 		}
 	}
 
@@ -54,7 +51,7 @@ func ShowSnippet(app *config.Application) http.HandlerFunc {
 
 		// if err, return 404
 		if err != nil || id < 0 {
-			http.NotFound(w, r)
+			app.NotFound(w)
 			return
 		}
 
@@ -69,7 +66,7 @@ func CreateSnippet(app *config.Application) http.HandlerFunc {
 		// if not method POST
 		if r.Method != http.MethodPost {
 			w.Header().Set("Allow", http.MethodPost)
-			http.Error(w, "Method fobidden!", http.StatusMethodNotAllowed)
+			app.ClientError(w, http.StatusMethodNotAllowed)
 			return
 		}
 		w.Write([]byte("Creating a new note"))
