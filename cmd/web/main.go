@@ -8,24 +8,26 @@ import (
 	"os"
 	"path/filepath"
 
+	"golangs.org/snippetbox/pkg/models/mysql"
+
 	_ "github.com/go-sql-driver/mysql"
 )
 
 type application struct {
 	errorLog *log.Logger
 	infoLog  *log.Logger
+	snippets *mysql.SnippetModel // add field for access for our handlers
 }
 
 func main() {
 
 	// create a new flag cmd
 	addr := flag.String("addr", ":4000", "Net address HTTP")
-
 	// new cmd flag for setting MySQL connection
 	dsn := flag.String("dsn", "web:ndJMv9zrJw@/snippetbox?parseTime=true", "Name of MySQL data source")
-
 	// call func for extract flag from cmd
 	flag.Parse()
+
 	// log file
 	f, err := os.OpenFile("info.log", os.O_RDWR|os.O_CREATE, 0666)
 	if err != nil {
@@ -33,18 +35,23 @@ func main() {
 	}
 	defer f.Close()
 
-	// set application
-	app := &application{
-		errorLog: log.New(f, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile),
-		infoLog:  log.New(f, "INFO\t", log.Ldate|log.Ltime),
-	}
+	errorLog := log.New(f, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
+	infoLog := log.New(f, "INFO\t", log.Ldate|log.Ltime)
 
 	// open DB
 	db, err := openDB(*dsn)
 	if err != nil {
-		app.errorLog.Fatal(err)
+		errorLog.Fatal(err)
 	}
 	defer db.Close()
+
+	// set application
+	app := &application{
+		errorLog: errorLog,
+		infoLog:  infoLog,
+		// initialise instance and add it in depensenses
+		snippets: &mysql.SnippetModel{DB: db},
+	}
 
 	// initialise new struct, set fields Addr and Handler
 	srv := &http.Server{
