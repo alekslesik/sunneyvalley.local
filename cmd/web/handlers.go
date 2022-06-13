@@ -1,10 +1,13 @@
 package main
 
 import (
+	"errors"
 	"fmt"
 	"net/http"
 	"strconv"
 	"text/template"
+
+	"golangs.org/snippetbox/pkg/models"
 )
 
 // home page handler
@@ -50,8 +53,18 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// input id value to response
-	fmt.Fprintf(w, "Displaying chosen note with ID %d...", id)
+	s, err := app.snippets.Get(id)
+	if err != nil {
+		if errors.Is(err, models.ErrNoRecord) {
+			app.notFound(w)
+		} else {
+			app.serverError(w, err)
+		}
+		return
+	}
+
+	// display all output on page
+	fmt.Fprintf(w, "%v", s)
 }
 
 // create note handler

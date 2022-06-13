@@ -1,4 +1,4 @@
-INFO	2022/06/10 13:32:18 Web server start on :4000
+INFO	2022/06/13 16:46:30 Web server start on :4000
 ERROR	2022/06/10 13:27:15 handlers.go:74: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 2
 goroutine 34 [running]:
 runtime/debug.Stack()

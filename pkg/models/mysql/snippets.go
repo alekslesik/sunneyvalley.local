@@ -2,6 +2,7 @@ package mysql
 
 import (
 	"database/sql"
+	"errors"
 
 	// import package models
 	"golangs.org/snippetbox/pkg/models"
@@ -37,7 +38,29 @@ func (m *SnippetModel) Instert(title, content, expires string) (int, error) {
 
 // method for returning snippet data by ID
 func (m *SnippetModel) Get(id int) (*models.Snippet, error) {
-	return nil, nil
+
+	// sql request for getting data of one snippet
+	stmt := `SELECT id, title, content, created, expires FROM snippets
+	WHERE expires > UTC_TIMESTAMP() AND id = ?`
+
+	row := m.DB.QueryRow(stmt, id)
+
+	// initialise pointer to new struct Snippet
+	s := &models.Snippet{}
+
+	// copy values from row to corresponding field s Snippet struct
+	err := row.Scan(&s.ID, &s.Title, &s.Content, &s.Created, &s.Expires)
+	if err != nil {
+		if errors.Is(err, sql.ErrNoRows) {
+			return nil, models.ErrNoRecord
+		} else {
+			return nil, err
+		}
+	}
+
+	// return Snippet object
+	return s, nil
+
 }
 
 // return the most uses 10 snippets
