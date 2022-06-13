@@ -65,5 +65,36 @@ func (m *SnippetModel) Get(id int) (*models.Snippet, error) {
 
 // return the most uses 10 snippets
 func (m *SnippetModel) Latest() ([]*models.Snippet, error) {
-	return nil, nil
+	smtp := `SELECT id, title, content, created, expires FROM snippets
+    WHERE expires > UTC_TIMESTAMP() ORDER BY created DESC LIMIT 10`
+
+	// get sql.Rows, included result of our request
+	rows, err := m.DB.Query(smtp)
+	if err != nil {
+		return nil, err
+	}
+
+	defer rows.Close()
+
+	// slice for storing models.Snippets objects
+	var snippets []*models.Snippet
+
+	// use for enumeration result "rows"
+	for rows.Next() {
+		// create a pointer to new struct
+		s := &models.Snippet{}
+		err = rows.Scan(&s.ID, &s.Title, &s.Content, &s.Created, &s.Expires)
+		if err != nil {
+			return nil, err
+		}
+
+		// add struct to slice
+		snippets = append(snippets, s)
+	}
+
+	if err = rows.Err(); err != nil {
+		return nil, err
+	}
+
+	return snippets, nil
 }

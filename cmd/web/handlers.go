@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
-	"text/template"
+	// "text/template"
 
 	"golangs.org/snippetbox/pkg/models"
 )
@@ -17,31 +17,40 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// initialise slice, contained paths to 2 files
-	// home.page.html must to be first
-	files := []string{
-		"C:/Users/Lesik/go/src/snippetbox/ui/html/home.page.html",
-		"C:/Users/Lesik/go/src/snippetbox/ui/html/base.layout.html",
-		"C:/Users/Lesik/go/src/snippetbox/ui/html/footer.partial.html",
-	}
-
-	// use ParseFiles for reading pattern file
-	ts, err := template.ParseFiles(files...)
+	s, err := app.snippets.Latest()
 	if err != nil {
 		app.serverError(w, err)
 		return
 	}
 
-	// then use method Exeecute for writing content of pattern
-	// in HTTP response body
-	err = ts.Execute(w, nil)
-	if err != nil {
-		app.serverError(w, err)
+	for _, snippet := range s {
+		fmt.Fprintf(w, "%v\n", snippet)
 	}
+
+	// initialise slice, contained paths to 2 files
+	// home.page.html must to be first
+	// files := []string{
+	// 	"C:/Users/Lesik/go/src/snippetbox/ui/html/home.page.html",
+	// 	"C:/Users/Lesik/go/src/snippetbox/ui/html/base.layout.html",
+	// 	"C:/Users/Lesik/go/src/snippetbox/ui/html/footer.partial.html",
+	// }
+
+	// // use ParseFiles for reading pattern file
+	// ts, err := template.ParseFiles(files...)
+	// if err != nil {
+	// 	app.serverError(w, err)
+	// 	return
+	// }
+
+	// // then use method Exeecute for writing content of pattern
+	// // in HTTP response body
+	// err = ts.Execute(w, nil)
+	// if err != nil {
+	// 	app.serverError(w, err)
+	// }
 }
 
-// display note handler
-
+// display snippet handler
 func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 	// extract value of parameter id from URL
 	// and try to convert string to integer using func Atoi
@@ -67,8 +76,7 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "%v", s)
 }
 
-// create note handler
-
+// create snippet handler
 func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
 	// if not method POST
 	if r.Method != http.MethodPost {
