@@ -74,6 +74,9 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	// create instance templateData struct included snippet data
+	data := &templateData{Snippet: s}
+
 	// slice with paths to html files
 	files := []string {
 		"./ui/html/show.page.html",
@@ -88,7 +91,7 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// execute template files
-	err = ts.Execute(w, s)
+	err = ts.Execute(w, data)
 	if err != nil {
 		app.serverError(w, err)
 	}
