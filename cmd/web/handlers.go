@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"text/template"
+
 	// "text/template"
 
 	"golangs.org/snippetbox/pkg/models"
@@ -72,8 +74,24 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// display all output on page
-	fmt.Fprintf(w, "%v", s)
+	// slice with paths to html files
+	files := []string {
+		"./ui/html/show.page.html",
+        "./ui/html/base.layout.html",
+        "./ui/html/footer.partial.html",
+	}
+
+	// parsing template files
+	ts, err := template.ParseFiles(files...)
+	if err != nil {
+		app.serverError(w, err)
+	}
+
+	// execute template files
+	err = ts.Execute(w, s)
+	if err != nil {
+		app.serverError(w, err)
+	}
 }
 
 // create snippet handler

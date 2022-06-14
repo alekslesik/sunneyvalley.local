@@ -1,37 +1,793 @@
-INFO	2022/06/13 16:46:30 Web server start on :4000
-ERROR	2022/06/10 13:27:15 handlers.go:74: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '))' at line 2
-goroutine 34 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000004090, {0x56b6f8, 0xc00007c0e0}, {0x569320?, 0xc000004108?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).createSnippet(0xc000004090, {0x56b6f8, 0xc00007c0e0}, 0xc000200100)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:74 +0x17d
-net/http.HandlerFunc.ServeHTTP(0x18fc4bd0d28?, {0x56b6f8?, 0xc00007c0e0?}, 0x17d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x56b6f8, 0xc00007c0e0}, 0xc000200100)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc0000222a0?}, {0x56b6f8, 0xc00007c0e0}, 0xc000200100)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001b2000, {0x56b8f8, 0xc00019c120})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-o/src/snippetbox/ui/html/home.page.html: The system cannot find the file specified.
+INFO	2022/06/14 12:25:00 Web server start on :4000
+ERROR	2022/06/14 12:04:50 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
 goroutine 18 [running]:
 runtime/debug.Stack()
 	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-golangs.org/snippetbox/pkg/config.(*Application).ServerError(0xc000050c40, {0xde2528, 0xc00013e0e0}, {0xde0460?, 0xc00007aff0?})
-	C:/Users/Lesik/go/src/snippetbox/pkg/config/helpers.go:14 +0x58
-main.Home.func1({0xde2528?, 0xc00013e0e0}, 0x0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:31 +0x18c
-net/http.HandlerFunc.ServeHTTP(0x1f2e06a4dd8?, {0xde2528?, 0xc00013e0e0?}, 0xa3d805?)
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00021e000}, {0xfea6a0?, 0xc000206120?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e000}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc00021e000?}, 0xbfd805?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0xde2528, 0xc00013e0e0}, 0xc000142200)
+net/http.(*ServeMux).ServeHTTP(0xc00020000d?, {0xfec9b8, 0xc00021e000}, 0xc000150100)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007ae70?}, {0xde2528, 0xc00013e0e0}, 0xc000142200)
+net/http.serverHandler.ServeHTTP({0xc00007b140?}, {0xfec9b8, 0xc00021e000}, 0xc000150100)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000b2000, {0xde2738, 0xc00009c120})
+net/http.(*conn).serve(0xc0001ae000, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:50 server.go:3195: http: panic serving 127.0.0.1:51143: runtime error: invalid memory address or nil pointer dereference
+goroutine 18 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000738d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00021e000?}, {0xeedc60?, 0xc000230000?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e000}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc00021e000?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020000d?, {0xfec9b8, 0xc00021e000}, 0xc000150100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007b140?}, {0xfec9b8, 0xc00021e000}, 0xc000150100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001ae000, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:50 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 19 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00014e0e0}, {0xfea6a0?, 0xc00007b320?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e0e0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00014e0e0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000010f4d?, {0xfec9b8, 0xc00014e0e0}, 0xc000150200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c030?}, {0xfec9b8, 0xc00014e0e0}, 0xc000150200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001ae0a0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:50 server.go:3195: http: panic serving 127.0.0.1:51144: runtime error: invalid memory address or nil pointer dereference
+goroutine 19 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000738d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00014e0e0?}, {0xeedc60?, 0xc00005e2a0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e0e0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00014e0e0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000010f4d?, {0xfec9b8, 0xc00014e0e0}, 0xc000150200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c030?}, {0xfec9b8, 0xc00014e0e0}, 0xc000150200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001ae0a0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:50 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 10 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00014e1c0}, {0xfea6a0?, 0xc00007b5c0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e1c0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00014e1c0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000010f8d?, {0xfec9b8, 0xc00014e1c0}, 0xc00025a000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002061e0?}, {0xfec9b8, 0xc00014e1c0}, 0xc00025a000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074b40, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:50 server.go:3195: http: panic serving 127.0.0.1:51145: runtime error: invalid memory address or nil pointer dereference
+goroutine 10 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000738d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00014e1c0?}, {0xeedc60?, 0xc00005e300?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e1c0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00014e1c0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000010f8d?, {0xfec9b8, 0xc00014e1c0}, 0xc00025a000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002061e0?}, {0xfec9b8, 0xc00014e1c0}, 0xc00025a000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074b40, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:51 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 12 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a8000}, {0xfea6a0?, 0xc00008c180?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8000}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc0000a8000?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009400d?, {0xfec9b8, 0xc0000a8000}, 0xc00025a100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206240?}, {0xfec9b8, 0xc0000a8000}, 0xc00025a100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074be0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:51 server.go:3195: http: panic serving 127.0.0.1:51146: runtime error: invalid memory address or nil pointer dereference
+goroutine 12 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc00006f8d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a8000?}, {0xeedc60?, 0xc0000881e0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8000}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc0000a8000?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009400d?, {0xfec9b8, 0xc0000a8000}, 0xc00025a100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206240?}, {0xfec9b8, 0xc0000a8000}, 0xc00025a100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074be0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:51 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 13 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a80e0}, {0xfea6a0?, 0xc00008c360?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a80e0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a80e0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009404d?, {0xfec9b8, 0xc0000a80e0}, 0xc00025a200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002062a0?}, {0xfec9b8, 0xc0000a80e0}, 0xc00025a200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074c80, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:51 server.go:3195: http: panic serving 127.0.0.1:51147: runtime error: invalid memory address or nil pointer dereference
+goroutine 13 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc00006f8d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a80e0?}, {0xeedc60?, 0xc0000882a0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a80e0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a80e0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009404d?, {0xfec9b8, 0xc0000a80e0}, 0xc00025a200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002062a0?}, {0xfec9b8, 0xc0000a80e0}, 0xc00025a200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074c80, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:51 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 14 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a81c0}, {0xfea6a0?, 0xc00008c570?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a81c0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a81c0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009408d?, {0xfec9b8, 0xc0000a81c0}, 0xc0000ec000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c420?}, {0xfec9b8, 0xc0000a81c0}, 0xc0000ec000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074d20, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:51 server.go:3195: http: panic serving 127.0.0.1:51148: runtime error: invalid memory address or nil pointer dereference
+goroutine 14 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a81c0?}, {0xeedc60?, 0xc000088300?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a81c0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a81c0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009408d?, {0xfec9b8, 0xc0000a81c0}, 0xc0000ec000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c420?}, {0xfec9b8, 0xc0000a81c0}, 0xc0000ec000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074d20, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:52 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 35 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a82a0}, {0xfea6a0?, 0xc00008c720?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a82a0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a82a0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000940cd?, {0xfec9b8, 0xc0000a82a0}, 0xc00025a300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206390?}, {0xfec9b8, 0xc0000a82a0}, 0xc00025a300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000260000, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:52 server.go:3195: http: panic serving 127.0.0.1:51150: runtime error: invalid memory address or nil pointer dereference
+goroutine 35 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f38d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a82a0?}, {0xeedc60?, 0xc0000883c0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a82a0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a82a0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000940cd?, {0xfec9b8, 0xc0000a82a0}, 0xc00025a300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206390?}, {0xfec9b8, 0xc0000a82a0}, 0xc00025a300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000260000, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:52 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 36 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a8380}, {0xfea6a0?, 0xc00008c8d0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8380}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc0000a8380?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009410d?, {0xfec9b8, 0xc0000a8380}, 0xc00025a400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206450?}, {0xfec9b8, 0xc0000a8380}, 0xc00025a400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002600a0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:52 server.go:3195: http: panic serving 127.0.0.1:51151: runtime error: invalid memory address or nil pointer dereference
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f38d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a8380?}, {0xeedc60?, 0xc000088480?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8380}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc0000a8380?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009410d?, {0xfec9b8, 0xc0000a8380}, 0xc00025a400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206450?}, {0xfec9b8, 0xc0000a8380}, 0xc00025a400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002600a0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:52 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 37 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00021e0e0}, {0xfea6a0?, 0xc000206630?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e0e0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e0e0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020006d?, {0xfec9b8, 0xc00021e0e0}, 0xc0000ec100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c990?}, {0xfec9b8, 0xc00021e0e0}, 0xc0000ec100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000260140, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:52 server.go:3195: http: panic serving 127.0.0.1:51152: runtime error: invalid memory address or nil pointer dereference
+goroutine 37 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f38d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00021e0e0?}, {0xeedc60?, 0xc000230120?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e0e0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e0e0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020006d?, {0xfec9b8, 0xc00021e0e0}, 0xc0000ec100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008c990?}, {0xfec9b8, 0xc00021e0e0}, 0xc0000ec100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000260140, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:57 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 55 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00021e1c0}, {0xfea6a0?, 0xc00008cab0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e1c0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e1c0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0002000ad?, {0xfec9b8, 0xc00021e1c0}, 0xc00025a500)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002066f0?}, {0xfec9b8, 0xc00021e1c0}, 0xc00025a500)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fc000, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:57 server.go:3195: http: panic serving 127.0.0.1:51153: runtime error: invalid memory address or nil pointer dereference
+goroutine 55 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00021e1c0?}, {0xeedc60?, 0xc0000884e0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e1c0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e1c0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0002000ad?, {0xfec9b8, 0xc00021e1c0}, 0xc00025a500)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0002066f0?}, {0xfec9b8, 0xc00021e1c0}, 0xc00025a500)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fc000, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:57 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 56 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a8460}, {0xfea6a0?, 0xc00008ccc0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8460}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a8460?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009414d?, {0xfec9b8, 0xc0000a8460}, 0xc00025a600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206750?}, {0xfec9b8, 0xc0000a8460}, 0xc00025a600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fc0a0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:57 server.go:3195: http: panic serving 127.0.0.1:51154: runtime error: invalid memory address or nil pointer dereference
+goroutine 56 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a8460?}, {0xeedc60?, 0xc000088540?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8460}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a8460?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009414d?, {0xfec9b8, 0xc0000a8460}, 0xc00025a600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000206750?}, {0xfec9b8, 0xc0000a8460}, 0xc00025a600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fc0a0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:57 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 15 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00014e2a0}, {0xfea6a0?, 0xc00007b950?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e2a0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc00014e2a0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000010fcd?, {0xfec9b8, 0xc00014e2a0}, 0xc000150300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007b800?}, {0xfec9b8, 0xc00014e2a0}, 0xc000150300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074dc0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:04:57 server.go:3195: http: panic serving 127.0.0.1:51155: runtime error: invalid memory address or nil pointer dereference
+goroutine 15 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc00006f8d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00014e2a0?}, {0xeedc60?, 0xc00005e360?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e2a0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc00014e2a0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc000010fcd?, {0xfec9b8, 0xc00014e2a0}, 0xc000150300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007b800?}, {0xfec9b8, 0xc00014e2a0}, 0xc000150300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074dc0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:05:27 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 66 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a8540}, {0xfea6a0?, 0xc00008ce70?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8540}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a8540?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009418d?, {0xfec9b8, 0xc0000a8540}, 0xc000150400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007ba70?}, {0xfec9b8, 0xc0000a8540}, 0xc000150400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074e60, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:05:27 server.go:3195: http: panic serving 127.0.0.1:51157: runtime error: invalid memory address or nil pointer dereference
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a8540?}, {0xeedc60?, 0xc0000885a0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8540}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a8540?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00009418d?, {0xfec9b8, 0xc0000a8540}, 0xc000150400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007ba70?}, {0xfec9b8, 0xc0000a8540}, 0xc000150400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074e60, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:05:27 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 67 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00021e2a0}, {0xfea6a0?, 0xc0002069c0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e2a0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e2a0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0002000ed?, {0xfec9b8, 0xc00021e2a0}, 0xc000150500)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bb30?}, {0xfec9b8, 0xc00021e2a0}, 0xc000150500)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074f00, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:05:27 server.go:3195: http: panic serving 127.0.0.1:51158: runtime error: invalid memory address or nil pointer dereference
+goroutine 67 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00021e2a0?}, {0xeedc60?, 0xc0002301e0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e2a0}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e2a0?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0002000ed?, {0xfec9b8, 0xc00021e2a0}, 0xc000150500)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bb30?}, {0xfec9b8, 0xc00021e2a0}, 0xc000150500)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074f00, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:05:27 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 41 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00021e380}, {0xfea6a0?, 0xc000206c30?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e380}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e380?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020012d?, {0xfec9b8, 0xc00021e380}, 0xc0000ec200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008cf30?}, {0xfec9b8, 0xc00021e380}, 0xc0000ec200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002601e0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:05:27 server.go:3195: http: panic serving 127.0.0.1:51159: runtime error: invalid memory address or nil pointer dereference
+goroutine 41 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00021e380?}, {0xeedc60?, 0xc000230240?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e380}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00021e380?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020012d?, {0xfec9b8, 0xc00021e380}, 0xc0000ec200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00008cf30?}, {0xfec9b8, 0xc00021e380}, 0xc0000ec200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0002601e0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:06:27 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 68 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00014e380}, {0xfea6a0?, 0xc00007be00?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e380}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00014e380?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001100d?, {0xfec9b8, 0xc00014e380}, 0xc000150600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bbf0?}, {0xfec9b8, 0xc00014e380}, 0xc000150600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074fa0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:06:27 server.go:3195: http: panic serving 127.0.0.1:51166: runtime error: invalid memory address or nil pointer dereference
+goroutine 68 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00014e380?}, {0xeedc60?, 0xc00005e3c0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00014e380}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b64c8?, {0xfec9b8?, 0xc00014e380?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00001100d?, {0xfec9b8, 0xc00014e380}, 0xc000150600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bbf0?}, {0xfec9b8, 0xc00014e380}, 0xc000150600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074fa0, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:06:27 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 69 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc00021e460}, {0xfea6a0?, 0xc00008cf90?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e460}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc00021e460?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020016d?, {0xfec9b8, 0xc00021e460}, 0xc000150700)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bcb0?}, {0xfec9b8, 0xc00021e460}, 0xc000150700)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000075040, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:06:27 server.go:3195: http: panic serving 127.0.0.1:51167: runtime error: invalid memory address or nil pointer dereference
+goroutine 69 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc00021e460?}, {0xeedc60?, 0xc000088600?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc00021e460}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc00021e460?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc00020016d?, {0xfec9b8, 0xc00021e460}, 0xc000150700)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bcb0?}, {0xfec9b8, 0xc00021e460}, 0xc000150700)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000075040, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:06:27 handlers.go:87: open ./ui/html/show.page.tmpl: The system cannot find the file specified.
+goroutine 59 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000004210, {0xfec9b8, 0xc0000a8620}, {0xfea6a0?, 0xc00008d1a0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8620}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:87 +0x245
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a8620?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000941cd?, {0xfec9b8, 0xc0000a8620}, 0xc000150800)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bec0?}, {0xfec9b8, 0xc0000a8620}, 0xc000150800)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fc140, {0xfecbb8, 0xc000198120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/14 12:06:27 server.go:3195: http: panic serving 127.0.0.1:51168: runtime error: invalid memory address or nil pointer dereference
+goroutine 59 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+text/template.errRecover(0xc0000f78d0)
+	C:/Program Files/Go/src/text/template/exec.go:164 +0x15b
+panic({0xf0ca60, 0x11c7640})
+	C:/Program Files/Go/src/runtime/panic.go:838 +0x207
+text/template.(*Template).execute(0x0, {0xfea9a0?, 0xc0000a8620?}, {0xeedc60?, 0xc0000886c0?})
+	C:/Program Files/Go/src/text/template/exec.go:215 +0x22c
+text/template.(*Template).Execute(...)
+	C:/Program Files/Go/src/text/template/exec.go:201
+main.(*application).showSnippet(0xc000004210, {0xfec9b8?, 0xc0000a8620}, 0xcef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:91 +0x277
+net/http.HandlerFunc.ServeHTTP(0x19b769b65b8?, {0xfec9b8?, 0xc0000a8620?}, 0xbfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0xc0000941cd?, {0xfec9b8, 0xc0000a8620}, 0xc000150800)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007bec0?}, {0xfec9b8, 0xc0000a8620}, 0xc000150800)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000fc140, {0xfecbb8, 0xc000198120})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
