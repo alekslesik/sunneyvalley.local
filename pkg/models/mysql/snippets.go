@@ -20,7 +20,6 @@ func (m *SnippetModel) Instert(title, content, expires string) (int, error) {
 	stmt := `INSERT INTO snippets (title, content, created, expires)
     VALUES(?, ?, UTC_TIMESTAMP(), DATE_ADD(UTC_TIMESTAMP(), INTERVAL ? DAY))`
 
-
 	// use Exec for execute request
 	result, err := m.DB.Exec(stmt, title, content, expires)
 	if err != nil {
@@ -73,7 +72,6 @@ func (m *SnippetModel) Latest() ([]*models.Snippet, error) {
 	if err != nil {
 		return nil, err
 	}
-
 	defer rows.Close()
 
 	// slice for storing models.Snippets objects

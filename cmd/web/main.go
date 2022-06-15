@@ -20,7 +20,6 @@ type application struct {
 }
 
 func main() {
-
 	// create a new flag cmd
 	addr := flag.String("addr", ":4000", "Net address HTTP")
 	// new cmd flag for setting MySQL connection

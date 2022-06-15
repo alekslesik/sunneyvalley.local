@@ -7,8 +7,6 @@ import (
 	"strconv"
 	"text/template"
 
-	// "text/template"
-
 	"golangs.org/snippetbox/pkg/models"
 )
 
@@ -26,11 +24,6 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	}
 
 	data := &templateData{Snippets: s}
-
-	// for _, snippet := range s {
-	// 	fmt.Fprintf(w, "%v\n", snippet)
-	// }
-
 
 	files := []string{
 		"C:/Users/Lesik/go/src/snippetbox/ui/html/home.page.html",
@@ -79,10 +72,10 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 	data := &templateData{Snippet: s}
 
 	// slice with paths to html files
-	files := []string {
+	files := []string{
 		"./ui/html/show.page.html",
-        "./ui/html/base.layout.html",
-        "./ui/html/footer.partial.html",
+		"./ui/html/base.layout.html",
+		"./ui/html/footer.partial.html",
 	}
 
 	// parsing template files
