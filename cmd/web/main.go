@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"text/template"
 
 	"golangs.org/snippetbox/pkg/models/mysql"
 
@@ -14,9 +15,10 @@ import (
 )
 
 type application struct {
-	errorLog *log.Logger
-	infoLog  *log.Logger
-	snippets *mysql.SnippetModel // add field for access for our handlers
+	errorLog      *log.Logger
+	infoLog       *log.Logger
+	snippets      *mysql.SnippetModel // add field for access for our handlers
+	templateCache map[string]*template.Template
 }
 
 func main() {
@@ -44,12 +46,17 @@ func main() {
 	}
 	defer db.Close()
 
+	templateCache, err := newTemplateCache("./ui/html/")
+	if err != nil {
+		errorLog.Fatal(err)
+	}
+
 	// set application
 	app := &application{
 		errorLog: errorLog,
 		infoLog:  infoLog,
-		// initialise instance and add it in depensenses
-		snippets: &mysql.SnippetModel{DB: db},
+		snippets: &mysql.SnippetModel{DB: db}, // initialise instance and add it in depensenses
+		templateCache: templateCache,
 	}
 
 	// initialise new struct, set fields Addr and Handler
