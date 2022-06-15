@@ -25,31 +25,32 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	for _, snippet := range s {
-		fmt.Fprintf(w, "%v\n", snippet)
+	data := &templateData{Snippets: s}
+
+	// for _, snippet := range s {
+	// 	fmt.Fprintf(w, "%v\n", snippet)
+	// }
+
+
+	files := []string{
+		"C:/Users/Lesik/go/src/snippetbox/ui/html/home.page.html",
+		"C:/Users/Lesik/go/src/snippetbox/ui/html/base.layout.html",
+		"C:/Users/Lesik/go/src/snippetbox/ui/html/footer.partial.html",
 	}
 
-	// initialise slice, contained paths to 2 files
-	// home.page.html must to be first
-	// files := []string{
-	// 	"C:/Users/Lesik/go/src/snippetbox/ui/html/home.page.html",
-	// 	"C:/Users/Lesik/go/src/snippetbox/ui/html/base.layout.html",
-	// 	"C:/Users/Lesik/go/src/snippetbox/ui/html/footer.partial.html",
-	// }
+	// use ParseFiles for reading pattern file
+	ts, err := template.ParseFiles(files...)
+	if err != nil {
+		app.serverError(w, err)
+		return
+	}
 
-	// // use ParseFiles for reading pattern file
-	// ts, err := template.ParseFiles(files...)
-	// if err != nil {
-	// 	app.serverError(w, err)
-	// 	return
-	// }
-
-	// // then use method Exeecute for writing content of pattern
-	// // in HTTP response body
-	// err = ts.Execute(w, nil)
-	// if err != nil {
-	// 	app.serverError(w, err)
-	// }
+	// then use method Execute for writing content of pattern
+	// in HTTP response body
+	err = ts.Execute(w, data)
+	if err != nil {
+		app.serverError(w, err)
+	}
 }
 
 // display snippet handler
