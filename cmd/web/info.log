@@ -1,2 +1,2 @@
-INFO	2022/06/13 16:48:28 Web server start on :4000
+INFO	2022/06/17 16:54:22 Web server start on :4000
 ERROR	2022/06/13 16:47:57 main.go:68: listen tcp :4000: bind: Only one usage of each socket address (protocol/network address/port) is normally permitted.

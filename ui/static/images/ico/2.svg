@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="38.6269mm" height="51.2217mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 5591 7413"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#2B2A29;stroke-width:210.961;stroke-linecap:round;stroke-linejoin:round}
+    .str1 {stroke:#2B2A29;stroke-width:210.99;stroke-linecap:round;stroke-linejoin:round}
+    .fil0 {fill:none}
+    .fil1 {fill:#2B2A29;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_525488600">
+   <g>
+    <path class="fil0 str0" d="M1353 106l4132 0c0,2400 0,4801 0,7202 -224,0 -448,-250 -672,-250 -225,0 -449,250 -673,250 -224,0 -448,-250 -672,-250 -224,0 -449,250 -673,250 -224,0 -448,-250 -672,-250 -224,0 -448,250 -673,250 -224,0 -448,-250 -672,-250 -224,0 -448,250 -673,250l0 -5955 1248 -1247z"/>
+   </g>
+   <g>
+    <polyline class="fil0 str0" points="1353,106 1353,1353 105,1353 "/>
+   </g>
+   <g>
+    <line class="fil0 str1" x1="1885" y1="1814" x2="1885" y2= "6122" />
+   </g>
+   <g>
+    <path class="fil1" d="M1212 5072l0 212 -6 -1 -5 0 -5 -1 -5 -1 -5 -1 -5 -1 -5 -2 -5 -2 -5 -2 -4 -2 -5 -3 -4 -3 -4 -2 -4 -4 -4 -3 -4 -3 -3 -4 -3 -4 -4 -4 -3 -4 -2 -4 -3 -5 -2 -4 -2 -5 -2 -5 -2 -5 -1 -5 -1 -5 -1 -5 -1 -5 0 -6 -1 -5 1 -6 0 -5 1 -5 1 -6 1 -5 1 -5 2 -5 2 -4 2 -5 2 -5 3 -4 2 -4 3 -5 4 -4 3 -3 3 -4 4 -4 4 -3 4 -3 4 -3 4 -3 5 -2 4 -3 5 -2 5 -2 5 -1 5 -2 5 -1 5 -1 5 -1 5 0 6 0zm1347 212l-1347 0 0 -212 1347 0 0 212zm0 0l0 -212 5 0 5 0 6 1 5 1 5 1 5 2 5 1 5 2 4 2 5 3 4 2 5 3 4 3 4 3 4 3 3 4 4 4 3 3 3 4 3 5 3 4 2 4 3 5 2 5 2 4 1 5 2 5 1 5 1 6 1 5 0 5 0 6 0 5 0 6 -1 5 -1 5 -1 5 -2 5 -1 5 -2 5 -2 5 -3 4 -2 5 -3 4 -3 4 -3 4 -3 4 -4 4 -3 3 -4 3 -4 4 -4 2 -5 3 -4 3 -5 2 -4 2 -5 2 -5 2 -5 1 -5 1 -5 1 -6 1 -5 0 -5 1z"/>
+   </g>
+   <g>
+    <path class="fil0 str1" d="M1885 1780l1209 0c710,0 1285,575 1285,1284 0,709 -575,1284 -1285,1284l-1882 0"/>
+   </g>
+  </g>
+ </g>
+</svg>

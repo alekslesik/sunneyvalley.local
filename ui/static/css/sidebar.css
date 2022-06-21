@@ -1,0 +1,267 @@
+/* SIDEBAR */
+
+/* slider photo */
+
+#sidebar_photo_block {
+	position: relative;
+	margin-bottom: 50px;
+	padding: 15px 0;
+	background: #f7f7f7;
+	border: 1px solid #f7f7f7;
+	border-radius: 4px;
+}
+
+#sidebar_photo_block .title {
+	font-size: 1.1em;
+	margin: 0 0 10px 15px;
+	text-transform: uppercase;
+}
+
+#sidebar_photo_block img {
+	width: 100%;
+	height: auto;
+	padding: 0 0 45px;
+}
+
+#sidebar_photo_block .prevarr, #sidebar_photo_block .nextarr {
+	font-size: 2em;
+	color: #ccc;
+}
+
+#sidebar_photo_block .prevarr:hover, #sidebar_photo_block .nextarr:hover {
+	color: #aeaeae;
+}
+
+#sidebar_photo {
+	position: relative;
+}
+
+#sidebar_photo_block .nextarr {
+	position: absolute;
+	bottom: 0;
+	right: 15px;
+	cursor: pointer;
+}
+
+#sidebar_photo_block .prevarr {
+	position: absolute;
+	bottom: 0;
+	right: 50px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#sidebar_photo_block .portfolio {
+	position: absolute;
+	bottom: 24px;
+	left: 15px;
+}
+
+#sidebar_photo_block .portfolio a {
+	text-decoration: underline;
+}
+
+#sidebar_photo_block .portfolio a:hover {
+	text-decoration: none;
+}
+
+/* slider otzyvy */
+
+#sidebar_otzyv_block {
+	position: relative;
+	margin-bottom: 50px;
+	padding: 15px;
+	background: #f7f7f7;
+	border: 1px solid #f7f7f7;
+	border-radius: 4px;
+}
+
+#sidebar_otzyv_block .title {
+	font-size: 1.1em;
+	margin: 0 0 10px;
+	text-transform: uppercase;
+}
+
+#sidebar_otzyv_block .text {
+	color: #404040;
+	font-size: 0.9em;
+	padding: 0 0 45px;
+}
+
+#sidebar_otzyv_block .name_date {
+	margin: 5px 0;
+}
+
+#sidebar_otzyv_block .name {
+	font-weight: 600;
+	margin-right: 10px;
+}
+
+#sidebar_otzyv_block .date {
+	font-style: italic;
+}
+
+#sidebar_otzyv_block .prevarr, #sidebar_otzyv_block .nextarr {
+	font-size: 2em;
+	color: #ccc;
+}
+
+#sidebar_otzyv_block .prevarr:hover, #sidebar_otzyv_block .nextarr:hover {
+	color: #aeaeae;
+}
+
+#sidebar_otzyv {
+	position: relative;
+}
+
+#sidebar_otzyv_block .nextarr {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	cursor: pointer;
+}
+
+#sidebar_otzyv_block .prevarr {
+	position: absolute;
+	bottom: 0;
+	right: 35px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#sidebar_otzyv_block .all_otzyv {
+	position: absolute;
+	bottom: 24px;
+	left: 15px;
+}
+
+#sidebar_otzyv_block .all_otzyv a {
+	text-decoration: underline;
+}
+
+#sidebar_otzyv_block .all_otzyv a:hover {
+	text-decoration: none;
+}
+
+/* slider action */
+
+#sidebar_action_block {
+	position: relative;
+	margin: 0 0 50px;
+	padding: 15px 0;
+	background: #f7f7f7;
+	border: 1px solid #f7f7f7;
+	border-radius: 4px;
+}
+
+#sidebar_action_block .title {
+	font-size: 1.1em;
+	margin: 0 0 10px 15px;
+	text-transform: uppercase;
+}
+
+#sidebar_action_block .action_img img {
+	width: 100%;
+	height: auto;
+	margin-bottom: 10px;
+}
+
+#sidebar_action_block .action_text {
+	margin-bottom: 50px;
+	padding: 0 15px 0 15px;
+	text-align: center;
+}
+
+#sidebar_action_block .action_text a {
+	text-decoration: underline;
+	color: #000;
+	font-size: 0.9em;
+	font-weight: 600;
+}
+
+#sidebar_action_block .action_text a:hover {
+	text-decoration: underline;
+}
+
+
+#sidebar_action_block .prevarr, #sidebar_action_block .nextarr {
+	font-size: 2em;
+	color: #ccc;
+}
+
+#sidebar_action_block .prevarr:hover, #sidebar_action_block .nextarr:hover {
+	color: #aeaeae;
+}
+
+#sidebar_action_block .nextarr {
+	position: absolute;
+	bottom: 0;
+	right: 15px;
+	cursor: pointer;
+}
+
+#sidebar_action_block .prevarr {
+	position: absolute;
+	bottom: 0;
+	right: 50px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#sidebar_action_block .link_action {
+	position: absolute;
+	bottom: 24px;
+	left: 15px;
+}
+
+#sidebar_action_block .link_action a {
+	text-decoration: underline;
+}
+
+#sidebar_action_block .link_action a:hover {
+	text-decoration: none;
+}
+
+/* FIX */
+
+/* sidebar fixed */
+
+#sidebar_fixed {
+	margin: 0;
+	width: 250px;
+}
+
+#sidebar .sticky-wrapper {
+	z-index: 1;
+}
+
+/* prais */
+
+#sidebar_prais {
+	margin: 0 0 50px;
+	padding: 5px;
+	background: #f7f7f7;
+}
+
+#sidebar_prais .block {
+	border: 2px dashed #e4e4e4;
+	padding: 15px;
+	text-align: center;
+}
+
+#sidebar_prais .block .fa {
+	font-size: 2.5em;
+	color: #48a216;
+	margin-bottom: 10px;
+}
+
+#sidebar_prais .text {
+	color: #000;
+    text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
+	font-size: 0.9em;
+	text-transform: uppercase;
+}
+
+#sidebar_prais:hover {
+	opacity: 0.8;
+}

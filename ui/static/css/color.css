@@ -1,0 +1,38 @@
+/* color_1 */
+
+a {color: #023b70;}
+.button {background: #023b70;}
+#header .fa {color: #023b70;}
+#header #header_logo .fa {background: #023b70;}
+#header_callback a {color: #023b70;}
+#header .hdslide_home .fa {background: #023b70;}
+#header .hdslide_contact_callback a {background: #023b70;}
+#header .hdtopmenu ul li:hover {background: #023b70 !important;}
+#header .hdtopmenu ul li a:hover {background: #023b70;}
+#top_menu_main {background: #023b70;}
+#flvmenu {background: #023b70;}
+#top_menu ul li ul li.root-item-selected {background: #023b70;}
+#top_menu ul li ul li.item-selected {background: #023b70;}
+#top_menu ul li ul li:hover {background: #023b70;}
+#slider .owl-theme a.slidetextlink {border-color: #023b70;}
+#slider .owl-theme a.slidetextlink:hover {border-color: #023b70; background: #023b70;}
+#breadcrumb a:hover, #breadcrumb a:focus  {color: #023b70;}
+#uslugi_box .img img {border-color: #023b70;}
+#proekty_box .img img {border-color: #023b70;}
+#catalog_section_list .box {border-color: #023b70;}
+#catalog_element .pr-elemright .zakaz_doma a {background: #023b70;}
+#content_index .index_plus .fa, #content .index_plus .fa {color: #023b70;}
+#content .link_back a:hover {color: #023b70;}
+#content_index ol.index_zakaz li:before, #content ol.index_zakaz li:before {background: #023b70;}
+#content .link_back .fa {background: #023b70;}
+#content .accordion h2 {background: #023b70;}
+#content th {background: #023b70;}
+#sidebar_prais .block .fa {color: #023b70;}
+#index_photo .prevarr, #index_photo .nextarr {color: #023b70;}
+#section_element_menu ul.menu-element-list-active2 a.item-selected {color: #023b70;}
+#section_element_menu ul#vertical-multilevel-menu > li.menu-section-active2 > a {background: #023b70;}
+#section_element_menu ul#vertical-multilevel-menu > li.menu-section-drive-active > a {background: #023b70;}
+#section_element_menu ul#vertical-multilevel-menu li a:hover {background: #023b70;}
+#content #tabs>ul>li.active, #content #tabs>ul>li.active:hover, #content #tabs>ul>li:hover {border-color: #023b70; color: #023b70;}
+#contacts .left .fa {color: #023b70;}
+@media (max-width:768px){#flvmenu > ul, #flvmenu > ul li ul {background: #023b70;}}
