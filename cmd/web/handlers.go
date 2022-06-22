@@ -26,9 +26,10 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	data := &templateData{Snippets: s}
 
 	files := []string{
-		"C:/Users/Lesik/go/src/snippetbox/ui/html/home.page.html",
-		"C:/Users/Lesik/go/src/snippetbox/ui/html/base.layout.html",
-		"C:/Users/Lesik/go/src/snippetbox/ui/html/footer.partial.html",
+		"C:/Users/Lesik/go/src/snippetbox/template/html/home/index.html",
+		"C:/Users/Lesik/go/src/snippetbox/template/base.layout.html",
+		"C:/Users/Lesik/go/src/snippetbox/template/header.html",
+		"C:/Users/Lesik/go/src/snippetbox/template/footer.html",
 	}
 
 	// use ParseFiles for reading pattern file

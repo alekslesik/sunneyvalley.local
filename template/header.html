@@ -6,15 +6,12 @@
 <head>
     <meta name=viewport content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no">
-    <title>
-        <?$APPLICATION->ShowTitle()?>
-    </title>
     <?$APPLICATION->ShowHead();?>
     <!--[if lt IE 9]>
 			<script src="<?=SITE_TEMPLATE_PATH?>/lib/html5shiv.min.js"></script>
 		<![endif]-->
 
-    <title>{{template "title" .}} - Snippetbox</title>
+    <title>{{template "title" .}}</title>
     <link rel="stylesheet" href="/static/css/main.css">
     <link rel="shortcut icon" href="/static/img/favicon.ico" type="image/x-icon">
 
@@ -73,7 +70,7 @@
                 </div>
                 <div id="header_top_search">
                     <form action="<?=SITE_DIR?>poisk/">
-                        <input type="text" name="q" placeholder="Փոսիկ" required>
+                        <input type="text" name="q" placeholder="<?=GetMessage("SEARCH")?>" required>
                         <button type="submit"></button>
                     </form>
                 </div>
@@ -99,16 +96,13 @@
                     <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_time.php"), false);?>
                 </div>
                 <div id="header_callback" class="zvonok_view">
-                    <a data-fancybox data-src="#form_callback_popup" href="javascript:;">Պատվիրել զանգ</a>
+                    <a data-fancybox data-src="#form_callback_popup" href="javascript:;"><?=GetMessage("CALLBACK")?></a>
                 </div>
             </div>
             <div id="header_zayavka">
                 <a data-fancybox data-src="#form_zayvka_popup" href="javascript:;">
-                    <i class="fa fa-file-text-o" aria-hidden="true"></i>հայտ
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i>Request
                 </a>
-            </div>
-            <div id="header_text">
-                <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_text.php"), false);?>
             </div>
         </div>
         <div class="head_slide">
@@ -119,32 +113,32 @@
                     </a>
                 </div>
                 <div class="hdtopmenu">
-                    <div class="hdmname">Մենյու</div>
+                    <div class="hdmname">Menu</div>
                     <?$APPLICATION->IncludeComponent(
-							"bitrix:menu",
-							"hdtopmenu",
-							array(
-							"ROOT_MENU_TYPE" => "top",
-							"MENU_CACHE_TYPE" => "A",
-							"MENU_CACHE_TIME" => "3600",
-							"MENU_CACHE_USE_GROUPS" => "Y",
-							"MENU_CACHE_GET_VARS" => array(
-							),
-							"MAX_LEVEL" => "1",
-							"CHILD_MENU_TYPE" => "left",
-							"USE_EXT" => "N",
-							"DELAY" => "N",
-							"ALLOW_MULTI_SELECT" => "N",
-							"COMPONENT_TEMPLATE" => "hdtopmenu"
-							),
-							false
-						);?>
+                        "bitrix:menu",
+                        "hdtopmenu",
+                        array(
+                        "ROOT_MENU_TYPE" => "top",
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_USE_GROUPS" => "Y",
+                        "MENU_CACHE_GET_VARS" => array(
+                        ),
+                        "MAX_LEVEL" => "1",
+                        "CHILD_MENU_TYPE" => "left",
+                        "USE_EXT" => "N",
+                        "DELAY" => "N",
+                        "ALLOW_MULTI_SELECT" => "N",
+                        "COMPONENT_TEMPLATE" => "hdtopmenu"
+                        ),
+                        false
+                    );?>
                 </div>
                 <div class="hdslide_contact_zayvka zvonok_view">
-                    <a data-fancybox data-src="#form_zayvka_popup" href="javascript:;">ԹՈՂՆԵԼ ՀԱՅՏ</a>
+                    <a data-fancybox data-src="#form_zayvka_popup" href="javascript:;">Request</a>
                 </div>
                 <div class="hdslide_contact_callback zvonok_view">
-                    <a data-fancybox data-src="#form_callback_popup" href="javascript:;">ՊԱՏՎԻՐԵԼ ԶԱՆԳ</a>
+                    <a data-fancybox data-src="#form_callback_popup" href="javascript:;"><?=GetMessage("HDFIX_CALLBACK")?></a>
                 </div>
                 <div class="hdslide_contact">
                     <div class="hdslide_contact_nomer">
@@ -161,25 +155,25 @@
     <div id="top_menu">
         <nav id="top_menu_main">
             <?$APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	"mn_flmenu_top",
-	array(
-		"ROOT_MENU_TYPE" => "top",
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_USE_GROUPS" => "Y",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MAX_LEVEL" => "4",
-		"CHILD_MENU_TYPE" => "left",
-		"USE_EXT" => "Y",
-		"DELAY" => "N",
-		"ALLOW_MULTI_SELECT" => "N",
-		"COMPONENT_TEMPLATE" => "mn_flmenu_top"
-	),
-	false
-);?>
-        </nav>
+            "bitrix:menu",
+            "mn_flmenu_top",
+            array(
+                "ROOT_MENU_TYPE" => "top",
+                "MENU_CACHE_TYPE" => "A",
+                "MENU_CACHE_TIME" => "3600",
+                "MENU_CACHE_USE_GROUPS" => "Y",
+                "MENU_CACHE_GET_VARS" => array(
+                ),
+                "MAX_LEVEL" => "3",
+                "CHILD_MENU_TYPE" => "left",
+                "USE_EXT" => "Y",
+                "DELAY" => "N",
+                "ALLOW_MULTI_SELECT" => "N",
+                "COMPONENT_TEMPLATE" => "mn_flmenu_top"
+            ),
+            false
+        );?>
+                    </nav>
     </div>
     <div id="wrapper">
         <div id="sidebar">
@@ -189,45 +183,47 @@
                 </div>
                 <nav id="sidebar_menu">
                     <?$APPLICATION->IncludeComponent(
-	"bitrix:menu",
-	"sections_menu",
-	array(
-		"ALLOW_MULTI_SELECT" => "Y",
-		"CHILD_MENU_TYPE" => "left",
-		"COMPONENT_TEMPLATE" => "sections_menu",
-		"DELAY" => "N",
-		"MAX_LEVEL" => "4",
-		"MENU_CACHE_GET_VARS" => array(
-		),
-		"MENU_CACHE_TIME" => "3600",
-		"MENU_CACHE_TYPE" => "A",
-		"MENU_CACHE_USE_GROUPS" => "N",
-		"MENU_THEME" => "site",
-		"ROOT_MENU_TYPE" => "left",
-		"USE_EXT" => "Y",
-		"COMPOSITE_FRAME_MODE" => "A",
-		"COMPOSITE_FRAME_TYPE" => "AUTO"
-	),
-	false,
-	array(
-		"ACTIVE_COMPONENT" => "Y"
-	)
-);?>
+                    "bitrix:menu",
+                    "sections_menu",
+                    array(
+                        "ALLOW_MULTI_SELECT" => "Y",
+                        "CHILD_MENU_TYPE" => "left",
+                        "COMPONENT_TEMPLATE" => "sections_menu",
+                        "DELAY" => "N",
+                        "MAX_LEVEL" => "2",
+                        "MENU_CACHE_GET_VARS" => array(
+                        ),
+                        "MENU_CACHE_TIME" => "3600",
+                        "MENU_CACHE_TYPE" => "A",
+                        "MENU_CACHE_USE_GROUPS" => "N",
+                        "MENU_THEME" => "site",
+                        "ROOT_MENU_TYPE" => "left",
+                        "USE_EXT" => "Y",
+                        "COMPOSITE_FRAME_MODE" => "A",
+                        "COMPOSITE_FRAME_TYPE" => "AUTO"
+                    ),
+                    false,
+                    array(
+                        "ACTIVE_COMPONENT" => "Y"
+                    )
+                );?>
                 </nav>
             </div>
         </div>
         <?if(!CSite::InDir(SITE_DIR.'index.php')):?>
         <div id="breadcrumb">
             <?$APPLICATION->IncludeComponent(
-					"bitrix:breadcrumb",
-					".default",
-					array(
-					"START_FROM" => "0",
-					"PATH" => "",
-					"SITE_ID" => "-",
-					),
-					false
-				);?>
+                "bitrix:breadcrumb",
+                ".default",
+                array(
+                "START_FROM" => "0",
+                "PATH" => "",
+                "SITE_ID" => "-",
+                ),
+                false
+            );?>
         </div>
         <?endif;?>
         <div id="content">
+
+{{ end }}
