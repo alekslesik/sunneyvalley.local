@@ -19,7 +19,6 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
 	p := &page.PageData{Title: "Home page", Keywords: "home", Description: "home page"}
 
-<<<<<<< HEAD
 	data := &templateData{
 		PageData: p,
 	}
@@ -44,12 +43,6 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.serverError(w, err)
 	}
-=======
-	// use helper render() for displaying pattern
-	app.render(w, r, "home.page.html", &templateData{
-		Snippets: s,
-	})
->>>>>>> master
 }
 
 // display snippet handler

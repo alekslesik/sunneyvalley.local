@@ -1,15 +1,8 @@
 package main
 
 import (
-<<<<<<< HEAD
 	"golangs.org/snippetbox/pkg/models"
 	"golangs.org/snippetbox/pkg/models/page"
-=======
-	"path/filepath"
-	"text/template"
-
-	"golangs.org/snippetbox/pkg/models"
->>>>>>> master
 )
 
 // storage for all dynamic data whitch should pass to HTML patterns
