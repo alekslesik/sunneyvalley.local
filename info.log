@@ -1,2 +1,127 @@
-INFO	2022/06/17 16:06:52 Web server start on :4000
-tern matches no files: `ui\html\*.layout.hmpl`
+INFO	2022/06/24 16:18:33 Web server start on :4000
+ERROR	2022/06/24 16:09:42 handlers.go:52: template: index.html:5:13: executing "title" at <.PageData.GetDescription>: can't evaluate field GetDescription in type *page.PageData
+goroutine 5 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000096198, {0x11ecc78, 0xc0001ae0e0}, {0x11eb680?, 0xc0000a4880?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x11ecc78?, 0xc0001ae0e0}, 0xeef770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:52 +0x208
+net/http.HandlerFunc.ServeHTTP(0x1b1bd54a578?, {0x11ecc78?, 0xc0001ae0e0?}, 0xdfd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x11ecc78, 0xc0001ae0e0}, 0xc000122300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc0000c3080?}, {0x11ecc78, 0xc0001ae0e0}, 0xc000122300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc00006c000, {0x11ece78, 0xc000022150})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/24 16:09:42 server.go:3195: http: superfluous response.WriteHeader call from main.(*application).serverError (helpers.go:15)
+Error(0xc0000041b0, {0x4ccc58, 0xc0001b01c0}, {0x4ca800?, 0xc000200110?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x4ccc58?, 0xc0001b01c0}, 0x1cf770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:45 +0x235
+net/http.HandlerFunc.ServeHTTP(0x13b37fe65b8?, {0x4ccc58?, 0xc0001b01c0?}, 0xdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x4ccc58, 0xc0001b01c0}, 0xc00023c100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182030?}, {0x4ccc58, 0xc0001b01c0}, 0xc00023c100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074be0, {0x4cce58, 0xc00007b1a0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/24 15:42:43 handlers.go:45: template: index.html:3: unexpected <.> in define clause
+goroutine 9 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000041b0, {0x4ccc58, 0xc0000aa0e0}, {0x4ca800?, 0xc0000901e0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x4ccc58?, 0xc0000aa0e0}, 0x1cf770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:45 +0x235
+net/http.HandlerFunc.ServeHTTP(0x13b37fe65b8?, {0x4ccc58?, 0xc0000aa0e0?}, 0xdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x4ccc58, 0xc0000aa0e0}, 0xc000094100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182030?}, {0x4ccc58, 0xc0000aa0e0}, 0xc000094100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074be0, {0x4cce58, 0xc00007b1a0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/24 15:42:44 handlers.go:45: template: index.html:3: unexpected <.> in define clause
+goroutine 9 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000041b0, {0x4ccc58, 0xc0001b02a0}, {0x4ca800?, 0xc0001862d0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x4ccc58?, 0xc0001b02a0}, 0x1cf770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:45 +0x235
+net/http.HandlerFunc.ServeHTTP(0x13b37fe65b8?, {0x4ccc58?, 0xc0001b02a0?}, 0xdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x4ccc58, 0xc0001b02a0}, 0xc00019a400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000182030?}, {0x4ccc58, 0xc0001b02a0}, 0xc00019a400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074be0, {0x4cce58, 0xc00007b1a0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/24 16:05:52 handlers.go:53: template: index.html:4:13: executing "title" at <.PageData.GetTitle>: can't evaluate field GetTitle in type *page.PageData
+goroutine 168 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000041b0, {0x4ccc58, 0xc00014a0e0}, {0x4cb660?, 0xc00022a0e0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x4ccc58?, 0xc00014a0e0}, 0x1cf770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:53 +0x208
+net/http.HandlerFunc.ServeHTTP(0x13b37fe6108?, {0x4ccc58?, 0xc00014a0e0?}, 0xdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x4ccc58, 0xc00014a0e0}, 0xc0004e2000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000208030?}, {0x4ccc58, 0xc00014a0e0}, 0xc0004e2000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074000, {0x4cce58, 0xc00007b1a0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/24 16:05:52 server.go:3195: http: superfluous response.WriteHeader call from main.(*application).serverError (helpers.go:15)
+ERROR	2022/06/24 16:05:53 handlers.go:53: template: index.html:4:13: executing "title" at <.PageData.GetTitle>: can't evaluate field GetTitle in type *page.PageData
+goroutine 168 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000041b0, {0x4ccc58, 0xc0000c0000}, {0x4cb660?, 0xc00022a280?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x4ccc58?, 0xc0000c0000}, 0x1cf770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:53 +0x208
+net/http.HandlerFunc.ServeHTTP(0x13b37fe6108?, {0x4ccc58?, 0xc0000c0000?}, 0xdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x4ccc58, 0xc0000c0000}, 0xc00026e000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000208030?}, {0x4ccc58, 0xc0000c0000}, 0xc00026e000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074000, {0x4cce58, 0xc00007b1a0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/24 16:05:53 server.go:3195: http: superfluous response.WriteHeader call from main.(*application).serverError (helpers.go:15)
+ERROR	2022/06/24 16:05:55 handlers.go:53: template: index.html:4:13: executing "title" at <.PageData.GetTitle>: can't evaluate field GetTitle in type *page.PageData
+goroutine 168 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000041b0, {0x4ccc58, 0xc00014a1c0}, {0x4cb660?, 0xc0000b4260?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x4ccc58?, 0xc00014a1c0}, 0x1cf770?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:53 +0x208
+net/http.HandlerFunc.ServeHTTP(0x13b37fe6108?, {0x4ccc58?, 0xc00014a1c0?}, 0xdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x4ccc58, 0xc00014a1c0}, 0xc0004e2100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000208030?}, {0x4ccc58, 0xc00014a1c0}, 0xc0004e2100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074000, {0x4cce58, 0xc00007b1a0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/06/24 16:05:55 server.go:3195: http: superfluous response.WriteHeader call from main.(*application).serverError (helpers.go:15)
