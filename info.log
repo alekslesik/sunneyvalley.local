@@ -1,4 +1,4 @@
-INFO	2022/06/24 16:09:54 Web server start on :4000
+INFO	2022/06/24 16:18:33 Web server start on :4000
 ERROR	2022/06/24 16:09:42 handlers.go:52: template: index.html:5:13: executing "title" at <.PageData.GetDescription>: can't evaluate field GetDescription in type *page.PageData
 goroutine 5 [running]:
 runtime/debug.Stack()

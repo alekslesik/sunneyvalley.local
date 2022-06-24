@@ -9,17 +9,17 @@ type PageData struct {
 
 // show page Title
 func (page *PageData) GetTitle() string {
-	return "<title>" + page.Title + "</title>\n"
+	return "    <title>" + page.Title + "</title>\n"
 }
 
 // show page Description
 func (page *PageData) GetDescription() string {
-	return "<meta name=\"description\" content=\"" + page.Description + "\" />"
+	return "    <meta name=\"description\" content=\"" + page.Description + "\" />"
 }
 
 // show page Keywords
 func (page *PageData) GetKeywords() string {
-	return "<meta name=\"keywords\" content=\"" + page.Keywords + "\" />"
+	return "    <meta name=\"keywords\" content=\"" + page.Keywords + "\" />"
 }
 
 // func (page *PageData) ShowMeta() string {
