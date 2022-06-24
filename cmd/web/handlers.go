@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"net/http"
 	"strconv"
+	"text/template"
 
 	"golangs.org/snippetbox/pkg/models"
 	"golangs.org/snippetbox/pkg/models/page"
@@ -67,10 +68,27 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	// use helper render() for displaying pattern
-	app.render(w, r, "show.page.html", &templateData{
-		Snippet: s,
-	})
+	// create instance templateData struct included snippet data
+	data := &templateData{Snippet: s}
+
+	// slice with paths to html files
+	files := []string{
+		"./ui/html/show.page.html",
+		"./ui/html/base.layout.html",
+		"./ui/html/footer.partial.html",
+	}
+
+	// parsing template files
+	ts, err := template.ParseFiles(files...)
+	if err != nil {
+		app.serverError(w, err)
+	}
+
+	// execute template files
+	err = ts.Execute(w, data)
+	if err != nil {
+		app.serverError(w, err)
+	}
 }
 
 // create snippet handler
