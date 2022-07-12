@@ -18,7 +18,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	p := &page.PageData{Title: "Home page", Keywords: "home", Description: "home page"}
+	p := &page.PageData{Title: "Sunney Valley", Keywords: "home", Description: "home page"}
 
 	data := &templateData{
 		PageData: p,
@@ -35,7 +35,9 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		"./template/includes/header_logo_name.html",
 		"./template/includes/header_phone.html",
 		"./template/includes/header_time.html",
+		"./template/includes/footer_title_menu_1.html",
 		"./pkg/components/hdtopmenu/hdtopmenu.html",
+		"./pkg/components/mn_flmenu_top/mn_flmenu_top.html",
 	}
 
 	// use ParseFiles for reading pattern file
