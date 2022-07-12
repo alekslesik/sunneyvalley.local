@@ -1,11 +1,12 @@
 package components
+// package components
 
-import (
+// import (
 
 
-	"golangs.org/snippetbox/pkg/components/include"
-)
+// 	"golangs.org/snippetbox/pkg/components/include"
+// )
 
-type Components struct {
-	Include 
-}
+// type Components struct {
+// 	Include
+// }

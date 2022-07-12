@@ -6,29 +6,29 @@
         <div id="footer_top_main">
             <div class="kontakty">
                 <div id="footer_nomer">
-                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_phone.php"), false);?>
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_phone.php"), false);?> -->
                 </div>
                 <div id="footer_callback" class="zvonok_view">
                     <a data-fancybox data-src="#form_callback_popup" href="javascript:;"><?=GetMessage("CALLBACK")?></a>
                 </div>
                 <div id="footer_email">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_email.php"), false);?>
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_email.php"), false);?> -->
                 </div>
                 <div id="footer_address">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_address.php"), false);?>
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_address.php"), false);?> -->
                 </div>
                 <div id="footer_social">
-                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_social.php"), false);?>
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_social.php"), false);?> -->
                 </div>
             </div>
             <div class="company">
                 <div class="title">
-                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_title_menu_1.php"), false);?>
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_title_menu_1.php"), false);?> -->
                 </div>
                 <nav class="footer_menu">
-                    <?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
                         "ROOT_MENU_TYPE" => "bottom",
                         "MENU_CACHE_TYPE" => "A",
                         "MENU_CACHE_TIME" => "3600",
@@ -41,15 +41,15 @@
                         "ALLOW_MULTI_SELECT" => "N",
                         ),
                         false
-                    );?>
+                    );?> -->
                 </nav>
             </div>
             <div class="proekty">
                 <div class="title">
-                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_title_menu_2.php"), false);?>
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_title_menu_2.php"), false);?> -->
                 </div>
                 <nav class="footer_menu">
-                    <?$APPLICATION->IncludeComponent(
+                    <!-- <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",
                         "top",
                         array(
@@ -67,15 +67,15 @@
                             "COMPONENT_TEMPLATE" => "top"
                         ),
                         false
-                    );?>
+                    );?> -->
                 </nav>
             </div>
             <div class="dopmenu">
                 <div class="title">
-                    <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_title_menu_3.php"), false);?>
+                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_title_menu_3.php"), false);?> -->
                 </div>
                 <nav class="footer_menu">
-                    <?$APPLICATION->IncludeComponent(
+                    <!-- <?$APPLICATION->IncludeComponent(
                         "bitrix:menu",
                         "top",
                         array(
@@ -93,7 +93,7 @@
                             "COMPONENT_TEMPLATE" => "top"
                         ),
                         false
-                    );?>
+                    );?> -->
                 </nav>
             </div>
         </div>
@@ -101,30 +101,30 @@
     <div id="footer_bottom">
         <div id="footer_bottom_main">
             <div id="footer_copyrait">
-                <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_copyrait.php"), false);?>
+                <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_copyrait.php"), false);?> -->
             </div>
         </div>
     </div>
 </footer>
 <!-- CALLBACK POPUP -->
-<?$APPLICATION->IncludeComponent(
+<!-- <?$APPLICATION->IncludeComponent(
     "bitrix:main.include",
     "",
     Array(
     "AREA_FILE_SHOW" => "file",
     "PATH" => SITE_DIR."includes/form_popup_callback.php"
     )
-);?>
+);?> -->
 <!-- /CALLBACK POPUP -->
 <!-- ZAYVKA POPUP -->
-<?$APPLICATION->IncludeComponent(
+<!-- <?$APPLICATION->IncludeComponent(
     "bitrix:main.include",
     "",
     Array(
     "AREA_FILE_SHOW" => "file",
     "PATH" => SITE_DIR."includes/form_popup_zayvka.php"
     )
-);?>
+);?> -->
 <!-- /ZAYVKA POPUP -->
 </body>
 </html>

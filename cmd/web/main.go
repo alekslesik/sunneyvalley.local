@@ -17,7 +17,7 @@ type application struct {
 	errorLog *log.Logger
 	infoLog  *log.Logger
 	snippets *mysql.SnippetModel // add field for access for our handlers
-	components *components
+	// components *components
 }
 
 func main() {

@@ -29,6 +29,13 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		"./template/base.layout.html",
 		"./template/header.html",
 		"./template/footer.html",
+		"./template/includes/header_adress.html",
+		"./template/includes/header_email.html",
+		"./template/includes/header_logo_img.html",
+		"./template/includes/header_logo_name.html",
+		"./template/includes/header_phone.html",
+		"./template/includes/header_time.html",
+		"./pkg/components/hdtopmenu/hdtopmenu.html",
 	}
 
 	// use ParseFiles for reading pattern file
