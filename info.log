@@ -1,4 +1,4 @@
-INFO	2022/07/11 17:33:04 Web server start on :4000
+INFO	2022/07/12 13:17:16 Web server start on :4000
 ERROR	2022/07/11 16:04:48 handlers.go:43: open ./template/includes/header_logo_phone.html: The system cannot find the file specified.
 goroutine 9 [running]:
 runtime/debug.Stack()

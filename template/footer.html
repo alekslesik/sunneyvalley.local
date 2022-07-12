@@ -6,26 +6,24 @@
         <div id="footer_top_main">
             <div class="kontakty">
                 <div id="footer_nomer">
-                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_phone.php"), false);?> -->
+                    {{ template "header_phone" }}
                 </div>
                 <div id="footer_callback" class="zvonok_view">
-                    <a data-fancybox data-src="#form_callback_popup" href="javascript:;"><?=GetMessage("CALLBACK")?></a>
+                    <a data-fancybox data-src="#form_callback_popup" href="javascript:;">CALLBACK</a>
                 </div>
                 <div id="footer_email">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_email.php"), false);?> -->
-                </div>
+                    {{ template "header_email" }}                </div>
                 <div id="footer_address">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/header_address.php"), false);?> -->
+                    {{ template "header_adress" }}
                 </div>
                 <div id="footer_social">
-                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_social.php"), false);?> -->
                 </div>
             </div>
             <div class="company">
                 <div class="title">
-                    <!-- <?$APPLICATION->IncludeComponent("bitrix:main.include", "", array("AREA_FILE_SHOW" => "file", "PATH" => SITE_DIR."includes/footer_title_menu_1.php"), false);?> -->
+                    {{ template "footer_title_menu_1" }}
                 </div>
                 <nav class="footer_menu">
                     <!-- <?$APPLICATION->IncludeComponent("bitrix:menu", "top", Array(
