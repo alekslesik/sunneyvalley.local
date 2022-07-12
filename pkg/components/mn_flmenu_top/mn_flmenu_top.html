@@ -1,0 +1,44 @@
+{{ define "mn_flmenu_top" }}
+<style>
+    #flvmenu {
+        float: unset;
+    }
+</style>
+
+<div id="flvmenu">
+    <div class="minmenu"><i class="fa fa-bars"></i><a>MENU</a></div>
+    <ul id="horizontal-multilevel-menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement"
+        style="display: block;">
+        <li><a href="/en/company/" itemprop="url">Company</a></li>
+        <li><a href="/en/equipment/" itemprop="url">Equipment</a></li>
+        <li><a href="/en/services/index.php" itemprop="url">Services</a></li>
+        <li><a href="/en/contacts/" itemprop="url">Contacts</a></li>
+        <li class="item-selected"><a href="/" itemprop="url">AM</a></li>
+        <li id="fllast" style="display: none;"><a>. . .</a><a class="flarr"></a>
+            <ul style="height: auto; left: 0px; right: auto;"></ul>
+        </li>
+    </ul>
+</div>
+<div class="menu-clear-left"></div>
+
+<script>
+    var jshover = function () {
+        var menuDiv = document.getElementById("horizontal-multilevel-menu")
+        if (!menuDiv)
+            return;
+
+        var sfEls = menuDiv.getElementsByTagName("li");
+        for (var i = 0; i < sfEls.length; i++) {
+            sfEls[i].onmouseover = function () {
+                this.className += " jshover";
+            }
+            sfEls[i].onmouseout = function () {
+                this.className = this.className.replace(new RegExp(" jshover\\b"), "");
+            }
+        }
+    }
+
+    if (window.attachEvent)
+        window.attachEvent("onload", jshover);
+</script>
+{{ end }}
