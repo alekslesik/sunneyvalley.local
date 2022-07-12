@@ -12,7 +12,7 @@ html, body {
 
 body {
     line-height: 1.5;
-    background-color: #F1F3F6;
+    background-color: #ffffff;
     color: #34495E;
     overflow-y: scroll;
 }
@@ -311,5 +311,5 @@ footer {
     background: #F7F9FA;
     height: 60px;
     color: #6A6C6F;
-    text-align: center;
+    /* text-align: center; */
 }
