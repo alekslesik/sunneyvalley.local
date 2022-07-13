@@ -1,106 +1,258 @@
-INFO	2022/07/13 13:16:09 Web server start on :4000
-ERROR	2022/07/11 16:04:48 handlers.go:43: open ./template/includes/header_logo_phone.html: The system cannot find the file specified.
-goroutine 9 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000041b0, {0x122d018, 0xc00021e000}, {0x122ad00?, 0xc0001842d0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0x122d018?, 0xc00021e000}, 0xf2f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:43 +0x2d6
-net/http.HandlerFunc.ServeHTTP(0x1d0704b65b8?, {0x122d018?, 0xc00021e000?}, 0xe3d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x122d018, 0xc00021e000}, 0xc00019a000)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc000184030?}, {0x122d018, 0xc00021e000}, 0xc00019a000)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000074be0, {0x122d218, 0xc00007b1a0})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/11 16:04:49 handlers.go:43: open ./template/includes/header_logo_phone.html: The system cannot find the file specified.
-goroutine 9 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000041b0, {0x122d018, 0xc00016e000}, {0x122ad00?, 0xc0002066f0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0x122d018?, 0xc00016e000}, 0xf2f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:43 +0x2d6
-net/http.HandlerFunc.ServeHTTP(0x1d0704b65b8?, {0x122d018?, 0xc00016e000?}, 0xe3d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x122d018, 0xc00016e000}, 0xc00019a100)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc000184030?}, {0x122d018, 0xc00016e000}, 0xc00019a100)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000074be0, {0x122d218, 0xc00007b1a0})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-nd}}
+INFO	2022/07/13 14:07:54 Web server start on :4000
+ERROR	2022/07/13 13:27:30 handlers.go:94: template: index.html:9: unexpected EOF
 goroutine 18 [running]:
 runtime/debug.Stack()
 	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000192000, {0xe9cf98, 0xc00019a1c0}, {0xe9ab40?, 0xc000051530?})
+main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc0000ca000}, {0x45ad60?, 0xc0000a01b0?})
 	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0xe9cf98?, 0xc00019a1c0}, 0xb9f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:41 +0x2a5
-net/http.HandlerFunc.ServeHTTP(0x168fa8465b8?, {0xe9cf98?, 0xc00019a1c0?}, 0xaad805?)
+main.(*application).company(0x0?, {0x45d1b8?, 0xc0000ca000}, 0x15f7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc0000ca000?}, 0x6d805?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0xe9cf98, 0xc00019a1c0}, 0xc0000c8300)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc0000ca000}, 0xc00014c100)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00018a0f0?}, {0xe9cf98, 0xc00019a1c0}, 0xc0000c8300)
+net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc0000ca000}, 0xc00014c100)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc00012e000, {0xe9d198, 0xc000118120})
+net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/11 15:47:45 handlers.go:41: template: header_logo_img.html:3: unexpected {{end}}
+ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
 goroutine 18 [running]:
 runtime/debug.Stack()
 	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000192000, {0xe9cf98, 0xc0000dc0e0}, {0xe9ab40?, 0xc00011a260?})
+main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc00014a0e0}, {0x45ad60?, 0xc0000a01e0?})
 	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0xe9cf98?, 0xc0000dc0e0}, 0xb9f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:41 +0x2a5
-net/http.HandlerFunc.ServeHTTP(0x168fa8465b8?, {0xe9cf98?, 0xc0000dc0e0?}, 0xaad805?)
+main.(*application).company(0x0?, {0x45d1b8?, 0xc00014a0e0}, 0x15f7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc00014a0e0?}, 0x6d805?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0xe9cf98, 0xc0000dc0e0}, 0xc000146000)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc00014a0e0}, 0xc00014c300)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00018a0f0?}, {0xe9cf98, 0xc0000dc0e0}, 0xc000146000)
+net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc00014a0e0}, 0xc00014c300)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc00012e000, {0xe9d198, 0xc000118120})
+net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/11 15:47:45 handlers.go:41: template: header_logo_img.html:3: unexpected {{end}}
+ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
 goroutine 18 [running]:
 runtime/debug.Stack()
 	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000192000, {0xe9cf98, 0xc00019a2a0}, {0xe9ab40?, 0xc0001967e0?})
+main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc0000ca0e0}, {0x45ad60?, 0xc0000510e0?})
 	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0xe9cf98?, 0xc00019a2a0}, 0xb9f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:41 +0x2a5
-net/http.HandlerFunc.ServeHTTP(0x168fa8465b8?, {0xe9cf98?, 0xc00019a2a0?}, 0xaad805?)
+main.(*application).company(0x0?, {0x45d1b8?, 0xc0000ca0e0}, 0x15f7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc0000ca0e0?}, 0x6d805?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0xe9cf98, 0xc00019a2a0}, 0xc000146200)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc0000ca0e0}, 0xc0000de000)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00018a0f0?}, {0xe9cf98, 0xc00019a2a0}, 0xc000146200)
+net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc0000ca0e0}, 0xc0000de000)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc00012e000, {0xe9d198, 0xc000118120})
+net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-rError(0xc000192000, {0xf4cef8, 0xc00019a0e0}, {0xf4b900?, 0xc0000ba460?})
+ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc00014a1c0}, {0x45ad60?, 0xc000051280?})
 	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0xf4cef8?, 0xc00019a0e0}, 0xc4f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:46 +0x208
-net/http.HandlerFunc.ServeHTTP(0x2b8cd0e64c8?, {0xf4cef8?, 0xc00019a0e0?}, 0xb5d805?)
+main.(*application).company(0x0?, {0x45d1b8?, 0xc00014a1c0}, 0x15f7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc00014a1c0?}, 0x6d805?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0xf4cef8, 0xc00019a0e0}, 0xc0001b0600)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc00014a1c0}, 0xc00014c400)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00008c030?}, {0xf4cef8, 0xc00019a0e0}, 0xc0001b0600)
+net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc00014a1c0}, 0xc00014c400)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000074aa0, {0xf4d0f8, 0xc00007b0e0})
+net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/11 10:36:37 server.go:3195: http: superfluous response.WriteHeader call from main.(*application).serverError (helpers.go:15)
+ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc00014a2a0}, {0x45ad60?, 0xc0000a0420?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x45d1b8?, 0xc00014a2a0}, 0x15f7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc00014a2a0?}, 0x6d805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc00014a2a0}, 0xc00014c500)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc00014a2a0}, 0xc00014c500)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ram Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:26:24 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0001521c0}, {0x13caea0?, 0xc00007b3e0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc0001521c0}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0001521c0?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0001521c0}, 0xc00014c200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0001521c0}, 0xc00014c200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0001522a0}, {0x13caea0?, 0xc00007b500?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc0001522a0}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0001522a0?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0001522a0}, 0xc000202300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0001522a0}, 0xc000202300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0002202a0}, {0x13caea0?, 0xc0002004b0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc0002202a0}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0002202a0?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0002202a0}, 0xc00014c300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0002202a0}, 0xc00014c300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0000ac000}, {0x13caea0?, 0xc00008c120?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc0000ac000}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0000ac000?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0000ac000}, 0xc000096100)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0000ac000}, 0xc000096100)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0000ac0e0}, {0x13caea0?, 0xc00008c270?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc0000ac0e0}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0000ac0e0?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0000ac0e0}, 0xc000202400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0000ac0e0}, 0xc000202400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc000220380}, {0x13caea0?, 0xc0002005d0?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc000220380}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc000220380?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc000220380}, 0xc000096200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc000220380}, 0xc000096200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:26:26 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0000ac1c0}, {0x13caea0?, 0xc00008c390?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc0000ac1c0}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0000ac1c0?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0000ac1c0}, 0xc000096300)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0000ac1c0}, 0xc000096300)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:27:24 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc000220460}, {0x13caea0?, 0xc000200750?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc000220460}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc000220460?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc000220460}, 0xc000096400)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc000220460}, 0xc000096400)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/13 13:27:24 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+goroutine 18 [running]:
+runtime/debug.Stack()
+	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc000220540}, {0x13caea0?, 0xc000200870?})
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).company(0x0?, {0x13cd1b8?, 0xc000220540}, 0x10cf7f0?)
+	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
+net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc000220540?}, 0xfdd805?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc000220540}, 0xc000202600)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc000220540}, 0xc000202600)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db

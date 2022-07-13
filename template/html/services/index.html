@@ -1,0 +1,19 @@
+{{template "base" .}}
+
+{{define "title"}}
+{{ .PageData.GetTitle }}
+{{ .PageData.GetDescription }}
+{{ .PageData.GetKeywords }}
+{{end}}
+
+{{define "main"}}
+
+
+<style>
+    #content {
+        margin-left: 0px;
+    }
+</style>
+
+
+{{end}}

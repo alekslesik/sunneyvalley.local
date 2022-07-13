@@ -7,6 +7,10 @@ func (app *application) routes() *http.ServeMux {
 	mux := http.NewServeMux()
 	// registaration handlers
 	mux.HandleFunc("/", app.home)
+	mux.HandleFunc("/en/company", app.company)
+	mux.HandleFunc("/en/equipment", app.equipment)
+	mux.HandleFunc("/en/services", app.services)
+	mux.HandleFunc("/en/contacts", app.contacts)
 	mux.HandleFunc("/snippet", app.showSnippet)
 	mux.HandleFunc("/snippet/create", app.createSnippet)
 
