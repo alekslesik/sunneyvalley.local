@@ -36,6 +36,8 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		"./template/includes/header_phone.html",
 		"./template/includes/header_time.html",
 		"./template/includes/footer_title_menu_1.html",
+		"./template/includes/footer_title_menu_2.html",
+		"./template/includes/footer_title_menu_3.html",
 		"./pkg/components/hdtopmenu/hdtopmenu.html",
 		"./pkg/components/mn_flmenu_top/mn_flmenu_top.html",
 	}
