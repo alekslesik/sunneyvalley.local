@@ -1,4 +1,4 @@
-module golangs.org/snippetbox
+module github.com/alekslesik/snippetbox
 
 go 1.18
 

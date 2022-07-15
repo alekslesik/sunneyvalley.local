@@ -5,7 +5,7 @@ import (
 	"errors"
 
 	// import package models
-	"golangs.org/snippetbox/pkg/models"
+	"github.com/alekslesik/snippetbox/pkg/models"
 )
 
 // define type whitch wrapping connecting pull sql.DB

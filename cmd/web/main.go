@@ -8,12 +8,13 @@ import (
 	"os"
 	"path/filepath"
 
-	"golangs.org/snippetbox/pkg/models/mysql"
+	"github.com/alekslesik/snippetbox/pkg/models/mysql"
 
 	_ "github.com/go-sql-driver/mysql"
 )
 
 type application struct {
+	gopath string
 	errorLog *log.Logger
 	infoLog  *log.Logger
 	snippets *mysql.SnippetModel // add field for access for our handlers
@@ -48,6 +49,7 @@ func main() {
 
 	// set application
 	app := &application{
+		gopath: os.Getenv("GOPATH"),
 		errorLog: errorLog,
 		infoLog:  infoLog,
 		// initialise instance and add it in depensenses
