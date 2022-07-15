@@ -1,82 +1,80 @@
-INFO	2022/07/15 10:35:30 Web server start on :4000
-ccess denied for user 'root'@'localhost' (using password: YES)
-9: unexpected EOF
-goroutine 18 [running]:
+INFO	2022/07/15 14:38:32 Web server start on :80
+ERROR	2022/07/15 14:11:42 main.go:69: listen tcp :80: bind: address already in use
+use
+box/template/html/home/index.html: no such file or directory
+goroutine 6 [running]:
 runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc0000ca000}, {0x45ad60?, 0xc0000a01b0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x45d1b8?, 0xc0000ca000}, 0x15f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc0000ca000?}, 0x6d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc0000ca000}, 0xc00014c100)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc0000ca000}, 0xc00014c100)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc00000e018, {0x801dc8, 0xc0000760e0}, {0x7ff960?, 0xc000070570?})
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x801dc8?, 0xc0000760e0}, 0x4f2c29?)
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
+net/http.HandlerFunc.ServeHTTP(0x7fb63aaebc18?, {0x801dc8?, 0xc0000760e0?}, 0x40ecc5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x801dc8, 0xc0000760e0}, 0xc000078500)
+	/usr/local/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000070420?}, {0x801dc8, 0xc0000760e0}, 0xc000078500)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074140, {0x801ff0, 0xc000070210})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
-goroutine 18 [running]:
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/15 13:42:50 handlers.go:48: open ~/go/src/github.com/alekslesik/snippetbox/template/html/home/index.html: no such file or directory
+goroutine 6 [running]:
 runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc00014a0e0}, {0x45ad60?, 0xc0000a01e0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x45d1b8?, 0xc00014a0e0}, 0x15f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc00014a0e0?}, 0x6d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc00014a0e0}, 0xc00014c300)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc00014a0e0}, 0xc00014c300)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc00000e018, {0x801dc8, 0xc00010c000}, {0x7ff960?, 0xc000094f30?})
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x801dc8?, 0xc00010c000}, 0x4f2c29?)
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
+net/http.HandlerFunc.ServeHTTP(0x7fb63aaebc18?, {0x801dc8?, 0xc00010c000?}, 0x40ecc5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x801dc8, 0xc00010c000}, 0xc000078800)
+	/usr/local/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000070420?}, {0x801dc8, 0xc00010c000}, 0xc000078800)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074140, {0x801ff0, 0xc000070210})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
-goroutine 18 [running]:
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/15 13:42:51 handlers.go:48: open ~/go/src/github.com/alekslesik/snippetbox/template/html/home/index.html: no such file or directory
+goroutine 6 [running]:
 runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc0000ca0e0}, {0x45ad60?, 0xc0000510e0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x45d1b8?, 0xc0000ca0e0}, 0x15f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc0000ca0e0?}, 0x6d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc0000ca0e0}, 0xc0000de000)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc0000ca0e0}, 0xc0000de000)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc00000e018, {0x801dc8, 0xc0000761c0}, {0x7ff960?, 0xc000070690?})
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x801dc8?, 0xc0000761c0}, 0x4f2c29?)
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
+net/http.HandlerFunc.ServeHTTP(0x7fb63aaebc18?, {0x801dc8?, 0xc0000761c0?}, 0x40ecc5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x801dc8, 0xc0000761c0}, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc000070420?}, {0x801dc8, 0xc0000761c0}, 0xc000110000)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000074140, {0x801ff0, 0xc000070210})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
-goroutine 18 [running]:
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+/go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/15 13:35:29 handlers.go:48: open C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/template/html/home/index.html: no such file or directory
+goroutine 6 [running]:
 runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc00014a1c0}, {0x45ad60?, 0xc000051280?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x45d1b8?, 0xc00014a1c0}, 0x15f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc00014a1c0?}, 0x6d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc00014a1c0}, 0xc00014c400)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc00014a1c0}, 0xc00014c400)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
+main.(*application).serverError(0xc00000e018, {0x801a68, 0xc0000782a0}, {0x7ff600?, 0xc00006e810?})
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
+main.(*application).home(0x0?, {0x801a68?, 0xc0000782a0}, 0x4f2c29?)
+	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
+net/http.HandlerFunc.ServeHTTP(0x7f1022c2ad08?, {0x801a68?, 0xc0000782a0?}, 0x40ecc5?)
+	/usr/local/go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x801a68, 0xc0000782a0}, 0xc00010e000)
+	/usr/local/go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0xc00006e360?}, {0x801a68, 0xc0000782a0}, 0xc00010e000)
+	/usr/local/go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0000760a0, {0x801c90, 0xc00006e270})
+	/usr/local/go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:27:31 handlers.go:94: template: index.html:9: unexpected EOF
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc0000041b0, {0x45d1b8, 0xc00014a2a0}, {0x45ad60?, 0xc0000a0420?})
+	/usr/local/go/src/net/http/server.go:3071 +0x4db
+0?, 0xc0000a0420?})
 	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
 main.(*application).company(0x0?, {0x45d1b8?, 0xc00014a2a0}, 0x15f7f0?)
 	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e

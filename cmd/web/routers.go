@@ -16,7 +16,7 @@ func (app *application) routes() *http.ServeMux {
 
 	// handle http-requests to static files from "/static"
 	// fileServer := http.FileServer(neuteredFileSystem{http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static")})
-	fileServer := http.FileServer(http.Dir("./template/static"))
+	fileServer := http.FileServer(http.Dir("/root/go/src/github.com/alekslesik/snippetbox/template/static"))
 
 	// use for registration handle all requests, begining with "/static/"
 	// mux.Handle("/static", http.NotFoundHandler())

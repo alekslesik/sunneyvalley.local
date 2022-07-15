@@ -22,7 +22,7 @@ type application struct {
 
 func main() {
 	// create a new flag cmd
-	addr := flag.String("addr", ":4000", "Net address HTTP")
+	addr := flag.String("addr", ":80", "Net address HTTP")
 	// new cmd flag for setting MySQL connection
 	// dsn := flag.String("dsn", "web:ndJMv9zrJw@/snippetbox?parseTime=true", "Name of MySQL data source")
 	dsn := flag.String("dsn", "root:Bn7{%14f@/snippetbox?parseTime=true", "Name of MySQL data source")

@@ -25,21 +25,21 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 	}
 
 	files := []string{
-		"./template/html/home/index.html",
-		"./template/base.layout.html",
-		"./template/header.html",
-		"./template/footer.html",
-		"./template/includes/header_adress.html",
-		"./template/includes/header_email.html",
-		"./template/includes/header_logo_img.html",
-		"./template/includes/header_logo_name.html",
-		"./template/includes/header_phone.html",
-		"./template/includes/header_time.html",
-		"./template/includes/footer_title_menu_1.html",
-		"./template/includes/footer_title_menu_2.html",
-		"./template/includes/footer_title_menu_3.html",
-		"./pkg/components/hdtopmenu/hdtopmenu.html",
-		"./pkg/components/mn_flmenu_top/mn_flmenu_top.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/html/home/index.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/base.layout.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/header.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/footer.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
 	}
 
 	// use ParseFiles for reading pattern file
@@ -71,21 +71,21 @@ func (app *application) company(w http.ResponseWriter, r *http.Request) {
 	}
 
 	files := []string{
-		"./template/html/company/index.html",
-		"./template/base.layout.html",
-		"./template/header.html",
-		"./template/footer.html",
-		"./template/includes/header_adress.html",
-		"./template/includes/header_email.html",
-		"./template/includes/header_logo_img.html",
-		"./template/includes/header_logo_name.html",
-		"./template/includes/header_phone.html",
-		"./template/includes/header_time.html",
-		"./template/includes/footer_title_menu_1.html",
-		"./template/includes/footer_title_menu_2.html",
-		"./template/includes/footer_title_menu_3.html",
-		"./pkg/components/hdtopmenu/hdtopmenu.html",
-		"./pkg/components/mn_flmenu_top/mn_flmenu_top.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/html/company/index.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/base.layout.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/header.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/footer.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
 	}
 
 	// use ParseFiles for reading pattern file
@@ -117,21 +117,21 @@ func (app *application) equipment(w http.ResponseWriter, r *http.Request) {
 	}
 
 	files := []string{
-		"./template/html/equipment/index.html",
-		"./template/base.layout.html",
-		"./template/header.html",
-		"./template/footer.html",
-		"./template/includes/header_adress.html",
-		"./template/includes/header_email.html",
-		"./template/includes/header_logo_img.html",
-		"./template/includes/header_logo_name.html",
-		"./template/includes/header_phone.html",
-		"./template/includes/header_time.html",
-		"./template/includes/footer_title_menu_1.html",
-		"./template/includes/footer_title_menu_2.html",
-		"./template/includes/footer_title_menu_3.html",
-		"./pkg/components/hdtopmenu/hdtopmenu.html",
-		"./pkg/components/mn_flmenu_top/mn_flmenu_top.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/html/equipment/index.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/base.layout.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/header.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/footer.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
 	}
 
 	// use ParseFiles for reading pattern file
@@ -163,21 +163,21 @@ func (app *application) services(w http.ResponseWriter, r *http.Request) {
 	}
 
 	files := []string{
-		"./template/html/services/index.html",
-		"./template/base.layout.html",
-		"./template/header.html",
-		"./template/footer.html",
-		"./template/includes/header_adress.html",
-		"./template/includes/header_email.html",
-		"./template/includes/header_logo_img.html",
-		"./template/includes/header_logo_name.html",
-		"./template/includes/header_phone.html",
-		"./template/includes/header_time.html",
-		"./template/includes/footer_title_menu_1.html",
-		"./template/includes/footer_title_menu_2.html",
-		"./template/includes/footer_title_menu_3.html",
-		"./pkg/components/hdtopmenu/hdtopmenu.html",
-		"./pkg/components/mn_flmenu_top/mn_flmenu_top.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/html/services/index.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/base.layout.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/header.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/footer.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
 	}
 
 	// use ParseFiles for reading pattern file
@@ -209,22 +209,22 @@ func (app *application) contacts(w http.ResponseWriter, r *http.Request) {
 	}
 
 	files := []string{
-		"./template/html/contacts/index.html",
-		"./template/base.layout.html",
-		"./template/header.html",
-		"./template/footer.html",
-		"./template/includes/header_adress.html",
-		"./template/includes/header_email.html",
-		"./template/includes/header_logo_img.html",
-		"./template/includes/header_logo_name.html",
-		"./template/includes/header_phone.html",
-		"./template/includes/header_time.html",
-		"./template/includes/footer_title_menu_1.html",
-		"./template/includes/footer_title_menu_2.html",
-		"./template/includes/footer_title_menu_3.html",
-		"./template/includes/form_contacts.html",
-		"./pkg/components/hdtopmenu/hdtopmenu.html",
-		"./pkg/components/mn_flmenu_top/mn_flmenu_top.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/html/contacts/index.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/base.layout.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/header.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/footer.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/template/includes/form_contacts.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
 	}
 
 	// use ParseFiles for reading pattern file
@@ -270,9 +270,9 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 
 	// slice with paths to html files
 	files := []string{
-		"./ui/html/show.page.html",
-		"./ui/html/base.layout.html",
-		"./ui/html/footer.partial.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/ui/html/show.page.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/ui/html/base.layout.html",
+		"/root/go/src/github.com/alekslesik/snippetbox/ui/html/footer.partial.html",
 	}
 
 	// parsing template files
