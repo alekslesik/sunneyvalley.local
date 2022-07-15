@@ -1,5 +1,6 @@
-INFO	2022/07/13 14:07:54 Web server start on :4000
-ERROR	2022/07/13 13:27:30 handlers.go:94: template: index.html:9: unexpected EOF
+INFO	2022/07/15 10:35:30 Web server start on :4000
+ccess denied for user 'root'@'localhost' (using password: YES)
+9: unexpected EOF
 goroutine 18 [running]:
 runtime/debug.Stack()
 	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
