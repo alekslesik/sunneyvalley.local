@@ -36,39 +36,39 @@ $(document).ready(function () {
 
 	/* FORM CONTACTS */
 
-	// $("#form_contacts_vopros").submit(function (event) {
-	// 	event.preventDefault();
+	$("#form_contacts_vopros").submit(function (event) {
+		event.preventDefault();
 
-	// 	// создадим пустой объект
-	// 	var $data = {};
-	// 	// переберём все элементы input, textarea и select формы с id="myForm "
-	// 	$('#form_contacts_vopros').find('input, textearea, select').each(function () {
-	// 		// добавим новое свойство к объекту $data
-	// 		// имя свойства – значение атрибута name элемента
-	// 		// значение свойства – значение свойство value элемента
-	// 		$data[this.name] = $(this).val();
-	// 	});
+		// создадим пустой объект
+		var $data = {};
+		// переберём все элементы input, textarea и select формы с id="myForm "
+		$('#form_contacts_vopros').find('input, textearea, select').each(function () {
+			// добавим новое свойство к объекту $data
+			// имя свойства – значение атрибута name элемента
+			// значение свойства – значение свойство value элемента
+			$data[this.name] = $(this).val();
+		});
 
-	// 	// var formData = new FormData(this);
-	// 	if ($('#garant_ch_contacts').prop('checked')) {
-	// 		$.ajax({
-	// 			url: "/mail-form",
-	// 			type: "post",
-	// 			// data: formData,
-	// 			data: $data,
-	// 			success: function (data) {
-	// 				$("#titlepop_contacts").html('<div class="thanks_form">' + data + '</div>');
-	// 			},
-	// 			error: function () {
-	// 				alert("Ваша заявка не отправлена! Попробуйте еще раз");
-	// 			},
-	// 			// cache: false,
-	// 			// contentType: false,
-	// 			// processData: false
-	// 		});
-	// 		$("#garant_error_contacts").html("");
-	// 	} else { $("#garant_error_contacts").html("Необходимо дать согласие"); }
-	// });
+		// var formData = new FormData(this);
+		if ($('#garant_ch_contacts').prop('checked')) {
+			$.ajax({
+				url: "/mail-form",
+				type: "post",
+				// data: formData,
+				data: $data,
+				success: function (data) {
+					$("#titlepop_contacts").html('<div class="thanks_form">' + data + '</div>');
+				},
+				error: function () {
+					alert("Ваша заявка не отправлена! Попробуйте еще раз");
+				},
+				// cache: false,
+				// contentType: false,
+				// processData: false
+			});
+			$("#garant_error_contacts").html("");
+		} else { $("#garant_error_contacts").html("Необходимо дать согласие"); }
+	});
 
 	/* FORM SLIDER */
 

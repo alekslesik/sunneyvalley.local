@@ -331,6 +331,10 @@ func (app *application) mailForm(w http.ResponseWriter, r *http.Request) {
 	formData.SetPhone(r.PostForm["form_phone"][0])
 	formData.SetMessage(r.PostForm["form_message"][0])
 
-	http.Redirect(w, r, "/en/contacts", http.StatusMovedPermanently)
+	// http.Redirect(w, r, "/en/contacts", http.StatusMovedPermanently)
+
+	w.Header().Set("Content-Type", "application/json")
+	// write the response
+	w.Write([]byte("good"))
 
 }
