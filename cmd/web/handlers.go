@@ -8,7 +8,9 @@ import (
 	"text/template"
 
 	"github.com/alekslesik/snippetbox/pkg/models"
+	"github.com/alekslesik/snippetbox/pkg/models/form"
 	"github.com/alekslesik/snippetbox/pkg/models/page"
+	// "github.com/alekslesik/snippetbox/pkg/models/form"
 )
 
 // home page handler
@@ -309,4 +311,26 @@ func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
 
 	// redirect user to corresponded snippet page
 	http.Redirect(w, r, fmt.Sprintf("/snippet?id=%d", id), http.StatusSeeOther)
+}
+
+// form handler from contact page
+
+func (app *application) mailForm(w http.ResponseWriter, r *http.Request) {
+	if r.URL.Path != "/mail-form" {
+		app.notFound(w)
+		return
+	}
+
+	// first parse data from post
+	r.ParseForm()
+
+
+	var formData form.FormData
+
+	formData.SetName(r.PostForm["form_name"][0])
+	formData.SetPhone(r.PostForm["form_phone"][0])
+	formData.SetMessage(r.PostForm["form_message"][0])
+
+	http.Redirect(w, r, "/en/contacts", http.StatusMovedPermanently)
+
 }

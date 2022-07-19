@@ -4,18 +4,21 @@
 	<div class="title">
 		Ask a question
 	</div>
-	<form id="form_contacts_vopros" class="feedback" method="post">
-		<input type="text" name="form_name" placeholder="Your name" maxlength="50">
-		<input type="text" name="form_phone" class="inputmask" placeholder="Your phone number*" required="required">
-		<textarea name="form_message" placeholder="Your message*" required="required" rows="3" maxlength="500"></textarea>
+	<form id="form_contacts_vopros" action="/mail-form" class="feedback" method="post">
+		<input type="text" name="form_name" placeholder="Your name" maxlength="50" value="Lesik">
+		<input type="text" name="form_phone" class="inputmask" placeholder="Your phone number*" required="required" value="+777777777">
+		<textarea name="form_message" placeholder="Your message*" required="required" rows="3"
+			maxlength="500" value="message"></textarea>
 		<div class="garant">
 			<input type="checkbox" id="garant_ch_contacts" checked="checked">
 			<label for="garant_ch_contacts">I agree to the processing of personal data</label>
 			<div id="garant_error_contacts"></div>
 		</div>
-		<button type="submit" class="button">Send</button>
+		<input type="submit" class="button" />
+		<!-- <button type="submit" class="button">Send</button> -->
 		<div id="titlepop_contacts"></div>
 	</form>
 </div>
+
 
 {{ end }}

@@ -15,6 +15,7 @@ func (app *application) routes() *http.ServeMux {
 	mux.HandleFunc("/en/contacts", app.contacts)
 	mux.HandleFunc("/snippet", app.showSnippet)
 	mux.HandleFunc("/snippet/create", app.createSnippet)
+	mux.HandleFunc("/mail-form", app.mailForm)
 
 
 	// handle http-requests to static files from "/static"
