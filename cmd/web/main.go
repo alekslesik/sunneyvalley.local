@@ -3,11 +3,11 @@ package main
 import (
 	"database/sql"
 	"flag"
+	"html/template"
 	"log"
 	"net/http"
 	"os"
 	"path/filepath"
-	"html/template"
 
 	"github.com/alekslesik/snippetbox/pkg/models/mysql"
 
@@ -15,20 +15,19 @@ import (
 )
 
 type application struct {
-	gopath string
-	errorLog *log.Logger
-	infoLog  *log.Logger
-	snippets *mysql.SnippetModel // add field for access for our handlers
+	gopath        string
+	errorLog      *log.Logger
+	infoLog       *log.Logger
+	snippets      *mysql.SnippetModel // add field for access for our handlers
 	templateCache map[string]*template.Template
 }
 
 func main() {
 	// create a new flag cmd
-	// addr := flag.String("addr", ":80", "Net address HTTP")
-	addr := flag.String("addr", ":4000", "Net address HTTP")
+	addr := flag.String("addr", ":80", "Net address HTTP")
 	// new cmd flag for setting MySQL connection
-	dsn := flag.String("dsn", "web:ndJMv9zrJw@/snippetbox?parseTime=true", "Name of MySQL data source")
-	// dsn := flag.String("dsn", "root:Bn7{%14f@/snippetbox?parseTime=true", "Name of MySQL data source")
+	// dsn := flag.String("dsn", "web:ndJMv9zrJw@/snippetbox?parseTime=true", "Name of MySQL data source")
+	dsn := flag.String("dsn", "root:Bn7{%14f@/snippetbox?parseTime=true", "Name of MySQL data source")
 	// call func for extract flag from cmd
 	flag.Parse()
 
@@ -56,11 +55,11 @@ func main() {
 
 	// set application
 	app := &application{
-		gopath: os.Getenv("GOPATH"),
+		gopath:   os.Getenv("GOPATH"),
 		errorLog: errorLog,
 		infoLog:  infoLog,
 		// initialise instance and add it in depensenses
-		snippets: &mysql.SnippetModel{DB: db},
+		snippets:      &mysql.SnippetModel{DB: db},
 		templateCache: templateCache,
 	}
 
