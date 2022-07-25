@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
+	"html/template"
 
 	"github.com/alekslesik/snippetbox/pkg/models/mysql"
 
@@ -18,7 +19,7 @@ type application struct {
 	errorLog *log.Logger
 	infoLog  *log.Logger
 	snippets *mysql.SnippetModel // add field for access for our handlers
-	// components *components
+	templateCache map[string]*template.Template
 }
 
 func main() {
@@ -41,6 +42,11 @@ func main() {
 	errorLog := log.New(f, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
 	infoLog := log.New(f, "INFO\t", log.Ldate|log.Ltime)
 
+	templateCache, err := newTemplateCache("/root/go/src/github.com/alekslesik/snippetbox/template/html")
+	if err != nil {
+		errorLog.Fatal(err)
+	}
+
 	// open DB
 	db, err := openDB(*dsn)
 	if err != nil {
@@ -55,6 +61,7 @@ func main() {
 		infoLog:  infoLog,
 		// initialise instance and add it in depensenses
 		snippets: &mysql.SnippetModel{DB: db},
+		templateCache: templateCache,
 	}
 
 	// initialise new struct, set fields Addr and Handler

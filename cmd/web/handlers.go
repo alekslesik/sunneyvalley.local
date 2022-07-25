@@ -22,41 +22,9 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 
 	p := &page.PageData{Title: "Sunney Valley", Keywords: "home", Description: "home page"}
 
-	data := &templateData{
+	app.render(w, r, "home", &templateData{
 		PageData: p,
-	}
-
-	files := []string{
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/html/home/index.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/base.layout.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/header.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/footer.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
-	}
-
-	// use ParseFiles for reading pattern file
-	ts, err := template.ParseFiles(files...)
-	if err != nil {
-		app.serverError(w, err)
-		return
-	}
-
-	// then use method Execute for writing content of pattern
-	// in HTTP response body
-	err = ts.Execute(w, data)
-	if err != nil {
-		app.serverError(w, err)
-	}
+	})
 }
 
 // company page handler
@@ -68,41 +36,9 @@ func (app *application) company(w http.ResponseWriter, r *http.Request) {
 
 	p := &page.PageData{Title: "About company", Keywords: "about", Description: "about"}
 
-	data := &templateData{
+	app.render(w, r, "company", &templateData{
 		PageData: p,
-	}
-
-	files := []string{
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/html/company/index.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/base.layout.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/header.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/footer.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
-	}
-
-	// use ParseFiles for reading pattern file
-	ts, err := template.ParseFiles(files...)
-	if err != nil {
-		app.serverError(w, err)
-		return
-	}
-
-	// then use method Execute for writing content of pattern
-	// in HTTP response body
-	err = ts.Execute(w, data)
-	if err != nil {
-		app.serverError(w, err)
-	}
+	})
 }
 
 // equipment page handler
@@ -114,41 +50,9 @@ func (app *application) equipment(w http.ResponseWriter, r *http.Request) {
 
 	p := &page.PageData{Title: "Equipment", Keywords: "equipment", Description: "equipment"}
 
-	data := &templateData{
+	app.render(w, r, "equipment", &templateData{
 		PageData: p,
-	}
-
-	files := []string{
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/html/equipment/index.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/base.layout.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/header.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/footer.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
-	}
-
-	// use ParseFiles for reading pattern file
-	ts, err := template.ParseFiles(files...)
-	if err != nil {
-		app.serverError(w, err)
-		return
-	}
-
-	// then use method Execute for writing content of pattern
-	// in HTTP response body
-	err = ts.Execute(w, data)
-	if err != nil {
-		app.serverError(w, err)
-	}
+	})
 }
 
 // services page handler
@@ -160,41 +64,9 @@ func (app *application) services(w http.ResponseWriter, r *http.Request) {
 
 	p := &page.PageData{Title: "Services", Keywords: "services", Description: "services"}
 
-	data := &templateData{
+	app.render(w, r, "services", &templateData{
 		PageData: p,
-	}
-
-	files := []string{
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/html/services/index.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/base.layout.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/header.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/footer.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
-	}
-
-	// use ParseFiles for reading pattern file
-	ts, err := template.ParseFiles(files...)
-	if err != nil {
-		app.serverError(w, err)
-		return
-	}
-
-	// then use method Execute for writing content of pattern
-	// in HTTP response body
-	err = ts.Execute(w, data)
-	if err != nil {
-		app.serverError(w, err)
-	}
+	})
 }
 
 // contacts page handler
@@ -206,42 +78,9 @@ func (app *application) contacts(w http.ResponseWriter, r *http.Request) {
 
 	p := &page.PageData{Title: "Contacts", Keywords: "contacts", Description: "contacts"}
 
-	data := &templateData{
+	app.render(w, r, "contacts", &templateData{
 		PageData: p,
-	}
-
-	files := []string{
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/html/contacts/index.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/base.layout.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/header.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/footer.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_adress.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_email.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_img.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_logo_name.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_phone.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/header_time.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_1.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_2.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/footer_title_menu_3.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/template/includes/form_contacts.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/hdtopmenu/hdtopmenu.html",
-		app.gopath + "/src/github.com/alekslesik/snippetbox/pkg/components/mn_flmenu_top/mn_flmenu_top.html",
-	}
-
-	// use ParseFiles for reading pattern file
-	ts, err := template.ParseFiles(files...)
-	if err != nil {
-		app.serverError(w, err)
-		return
-	}
-
-	// then use method Execute for writing content of pattern
-	// in HTTP response body
-	err = ts.Execute(w, data)
-	if err != nil {
-		app.serverError(w, err)
-	}
+	})
 }
 
 // display snippet handler
