@@ -1,257 +1,325 @@
-INFO	2022/07/15 16:54:58 Web server start on :80
-ERROR	2022/07/15 14:11:42 main.go:69: listen tcp :80: bind: address already in use
-use
-box/template/html/home/index.html: no such file or directory
-goroutine 6 [running]:
-runtime/debug.Stack()
-	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00000e018, {0x801dc8, 0xc0000760e0}, {0x7ff960?, 0xc000070570?})
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0x801dc8?, 0xc0000760e0}, 0x4f2c29?)
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
-net/http.HandlerFunc.ServeHTTP(0x7fb63aaebc18?, {0x801dc8?, 0xc0000760e0?}, 0x40ecc5?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x801dc8, 0xc0000760e0}, 0xc000078500)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc000070420?}, {0x801dc8, 0xc0000760e0}, 0xc000078500)
-	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000074140, {0x801ff0, 0xc000070210})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/15 13:42:50 handlers.go:48: open ~/go/src/github.com/alekslesik/snippetbox/template/html/home/index.html: no such file or directory
-goroutine 6 [running]:
-runtime/debug.Stack()
-	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00000e018, {0x801dc8, 0xc00010c000}, {0x7ff960?, 0xc000094f30?})
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0x801dc8?, 0xc00010c000}, 0x4f2c29?)
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
-net/http.HandlerFunc.ServeHTTP(0x7fb63aaebc18?, {0x801dc8?, 0xc00010c000?}, 0x40ecc5?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x801dc8, 0xc00010c000}, 0xc000078800)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc000070420?}, {0x801dc8, 0xc00010c000}, 0xc000078800)
-	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000074140, {0x801ff0, 0xc000070210})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/15 13:42:51 handlers.go:48: open ~/go/src/github.com/alekslesik/snippetbox/template/html/home/index.html: no such file or directory
-goroutine 6 [running]:
-runtime/debug.Stack()
-	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00000e018, {0x801dc8, 0xc0000761c0}, {0x7ff960?, 0xc000070690?})
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0x801dc8?, 0xc0000761c0}, 0x4f2c29?)
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
-net/http.HandlerFunc.ServeHTTP(0x7fb63aaebc18?, {0x801dc8?, 0xc0000761c0?}, 0x40ecc5?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x801dc8, 0xc0000761c0}, 0xc000110000)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc000070420?}, {0x801dc8, 0xc0000761c0}, 0xc000110000)
-	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc000074140, {0x801ff0, 0xc000070210})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
-/go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/15 13:35:29 handlers.go:48: open C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/template/html/home/index.html: no such file or directory
-goroutine 6 [running]:
-runtime/debug.Stack()
-	/usr/local/go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc00000e018, {0x801a68, 0xc0000782a0}, {0x7ff600?, 0xc00006e810?})
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).home(0x0?, {0x801a68?, 0xc0000782a0}, 0x4f2c29?)
-	/root/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:48 +0x35f
-net/http.HandlerFunc.ServeHTTP(0x7f1022c2ad08?, {0x801a68?, 0xc0000782a0?}, 0x40ecc5?)
-	/usr/local/go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x801a68, 0xc0000782a0}, 0xc00010e000)
-	/usr/local/go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00006e360?}, {0x801a68, 0xc0000782a0}, 0xc00010e000)
-	/usr/local/go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000760a0, {0x801c90, 0xc00006e270})
-	/usr/local/go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	/usr/local/go/src/net/http/server.go:3071 +0x4db
-0?, 0xc0000a0420?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x45d1b8?, 0xc00014a2a0}, 0x15f7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x1b39d9c65b8?, {0x45d1b8?, 0xc00014a2a0?}, 0x6d805?)
-	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x45d1b8, 0xc00014a2a0}, 0xc00014c500)
-	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007b0b0?}, {0x45d1b8, 0xc00014a2a0}, 0xc00014c500)
-	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0000b4000, {0x45d3b8, 0xc00009e120})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ram Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
-	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
-created by net/http.(*Server).Serve
-	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:26:24 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
+INFO	2022/07/19 21:45:00 Web server start on :4000
+ERROR	2022/07/19 21:45:13 server.go:3195: http: panic serving [::1]:58668: runtime error: index out of range [0] with length 0
 goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0001521c0}, {0x13caea0?, 0xc00007b3e0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc0001521c0}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0001521c0?}, 0xfdd805?)
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc0000166f0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0001520e0}, 0xc0001be100)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc0001520e0?}, 0xc000076560?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0001521c0}, 0xc00014c200)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0001520e0}, 0xc0001be100)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0001521c0}, 0xc00014c200)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0001520e0}, 0xc0001be100)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc0000980a0, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0001522a0}, {0x13caea0?, 0xc00007b500?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc0001522a0}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0001522a0?}, 0xfdd805?)
+ERROR	2022/07/19 21:45:13 server.go:3195: http: panic serving [::1]:58669: runtime error: index out of range [0] with length 0
+goroutine 19 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000016780})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0001521c0}, 0xc00014c100)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x11f9dc0?, {0x12ef8f8?, 0xc0001521c0?}, 0xc000076740?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0001522a0}, 0xc000202300)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0001521c0}, 0xc00014c100)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0001522a0}, 0xc000202300)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0001521c0}, 0xc00014c100)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc000098140, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0002202a0}, {0x13caea0?, 0xc0002004b0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc0002202a0}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0002202a0?}, 0xfdd805?)
+ERROR	2022/07/19 21:45:13 server.go:3195: http: panic serving [::1]:58670: runtime error: index out of range [0] with length 0
+goroutine 51 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc0001f0078})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0001f8000}, 0xc0001be200)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x2030000?, {0x12ef8f8?, 0xc0001f8000?}, 0xc0001f20a0?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0002202a0}, 0xc00014c300)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0001f8000}, 0xc0001be200)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0002202a0}, 0xc00014c300)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0001f8000}, 0xc0001be200)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc000074b40, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0000ac000}, {0x13caea0?, 0xc00008c120?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc0000ac000}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0000ac000?}, 0xfdd805?)
+ERROR	2022/07/19 21:46:08 server.go:3195: http: panic serving [::1]:58679: runtime error: index out of range [0] with length 0
+goroutine 49 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000698498})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0006a09a0}, 0xc0006ab000)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x200?, {0x12ef8f8?, 0xc0006a09a0?}, 0xc00006faa8?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0000ac000}, 0xc000096100)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0006a09a0}, 0xc0006ab000)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0000ac000}, 0xc000096100)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0006a09a0}, 0xc0006ab000)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc0004a8000, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0000ac0e0}, {0x13caea0?, 0xc00008c270?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc0000ac0e0}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0000ac0e0?}, 0xfdd805?)
+ERROR	2022/07/19 21:46:08 server.go:3195: http: panic serving [::1]:58684: runtime error: index out of range [0] with length 0
+goroutine 133 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc0002143c0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc000516700}, 0xc0000b7000)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc000516700?}, 0xc00052b740?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0000ac0e0}, 0xc000202400)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc000516700}, 0xc0000b7000)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0000ac0e0}, 0xc000202400)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc000516700}, 0xc0000b7000)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc0004a8320, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:26:25 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc000220380}, {0x13caea0?, 0xc0002005d0?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc000220380}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc000220380?}, 0xfdd805?)
+ERROR	2022/07/19 21:46:08 server.go:3195: http: panic serving [::1]:58682: runtime error: index out of range [0] with length 0
+goroutine 101 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000214450})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0005167e0}, 0xc0000b6f00)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc0005167e0?}, 0xc00052bc90?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc000220380}, 0xc000096200)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0005167e0}, 0xc0000b6f00)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc000220380}, 0xc000096200)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0005167e0}, 0xc0000b6f00)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc0000743c0, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:26:26 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc0000ac1c0}, {0x13caea0?, 0xc00008c390?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc0000ac1c0}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc0000ac1c0?}, 0xfdd805?)
+ERROR	2022/07/19 21:46:08 server.go:3195: http: panic serving [::1]:58680: runtime error: index out of range [0] with length 0
+goroutine 66 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc00008a3a8})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc000616620}, 0xc0000c0d00)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc000616620?}, 0xc000621450?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc0000ac1c0}, 0xc000096300)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc000616620}, 0xc0000c0d00)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc0000ac1c0}, 0xc000096300)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc000616620}, 0xc0000c0d00)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc0004a80a0, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:27:24 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc000220460}, {0x13caea0?, 0xc000200750?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc000220460}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc000220460?}, 0xfdd805?)
+ERROR	2022/07/19 21:46:08 server.go:3195: http: panic serving [::1]:58683: runtime error: index out of range [0] with length 0
+goroutine 132 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000698528})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0006a0a80}, 0xc00014c800)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc0006a0a80?}, 0xc0006ee4e0?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc000220460}, 0xc000096400)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0006a0a80}, 0xc00014c800)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc000220460}, 0xc000096400)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0006a0a80}, 0xc00014c800)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc0004a8280, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
-ERROR	2022/07/13 13:27:24 handlers.go:94: open ./template/html/about/index.html: The system cannot find the path specified.
-goroutine 18 [running]:
-runtime/debug.Stack()
-	C:/Program Files/Go/src/runtime/debug/stack.go:24 +0x65
-main.(*application).serverError(0xc000194000, {0x13cd1b8, 0xc000220540}, {0x13caea0?, 0xc000200870?})
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/helpers.go:12 +0x58
-main.(*application).company(0x0?, {0x13cd1b8?, 0xc000220540}, 0x10cf7f0?)
-	C:/Users/Lesik/go/src/snippetbox/cmd/web/handlers.go:94 +0x37e
-net/http.HandlerFunc.ServeHTTP(0x24c4c3665b8?, {0x13cd1b8?, 0xc000220540?}, 0xfdd805?)
+ERROR	2022/07/19 21:46:08 server.go:3195: http: panic serving [::1]:58681: runtime error: index out of range [0] with length 0
+goroutine 130 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc0002144e0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0005168c0}, 0xc0000c0a00)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc0005168c0?}, 0xc0005740b0?)
 	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
-net/http.(*ServeMux).ServeHTTP(0x0?, {0x13cd1b8, 0xc000220540}, 0xc000202600)
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0005168c0}, 0xc0000c0a00)
 	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
-net/http.serverHandler.ServeHTTP({0xc00007aff0?}, {0x13cd1b8, 0xc000220540}, 0xc000202600)
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0005168c0}, 0xc0000c0a00)
 	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
-net/http.(*conn).serve(0xc0001900a0, {0x13cd3b8, 0xc00018c1e0})
+net/http.(*conn).serve(0xc0004a8140, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:08 server.go:3195: http: panic serving [::1]:58694: runtime error: index out of range [0] with length 0
+goroutine 160 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc00008a438})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc000616700}, 0xc0000b7800)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x2030001?, {0x12ef8f8?, 0xc000616700?}, 0xc0006218a0?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc000616700}, 0xc0000b7800)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc000616700}, 0xc0000b7800)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0006c0140, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:13 server.go:3195: http: panic serving [::1]:58699: runtime error: index out of range [0] with length 0
+goroutine 121 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc00040c600})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0000a6b60}, 0xc00042cc00)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc0000a6b60?}, 0xc0002063d0?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0000a6b60}, 0xc00042cc00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0000a6b60}, 0xc00042cc00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000098140, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:13 server.go:3195: http: panic serving [::1]:58697: runtime error: index out of range [0] with length 0
+goroutine 65 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc0007202a0})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc000726460}, 0xc0000b7c00)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc000726460?}, 0xc000734ee0?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc000726460}, 0xc0000b7c00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc000726460}, 0xc0000b7c00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000534140, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:13 server.go:3195: http: panic serving [::1]:58698: runtime error: index out of range [0] with length 0
+goroutine 161 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000358468})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc000428620}, 0xc000710900)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc000428620?}, 0xc00043b3e0?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc000428620}, 0xc000710900)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc000428620}, 0xc000710900)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0006c01e0, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:13 server.go:3195: http: panic serving [::1]:58701: runtime error: index out of range [0] with length 0
+goroutine 195 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000214078})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc000428000}, 0xc0000c1000)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc000428000?}, 0xc00043a130?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc000428000}, 0xc0000c1000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc000428000}, 0xc0000c1000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0005341e0, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:13 server.go:3195: http: panic serving [::1]:58702: runtime error: index out of range [0] with length 0
+goroutine 179 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000358078})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0000a60e0}, 0xc0000c0f00)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc0000a60e0?}, 0xc00028a020?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0000a60e0}, 0xc0000c0f00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0000a60e0}, 0xc0000c0f00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc0007380a0, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:13 server.go:3195: http: panic serving [::1]:58700: runtime error: index out of range [0] with length 0
+goroutine 122 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000358108})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0000a61c0}, 0xc0006aba00)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x72?, {0x12ef8f8?, 0xc0000a61c0?}, 0xc00028a520?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0000a61c0}, 0xc0006aba00)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0000a61c0}, 0xc0006aba00)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000098280, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:13 server.go:3195: http: panic serving [::1]:58703: runtime error: index out of range [0] with length 0
+goroutine 97 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000358198})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc0000a62a0}, 0xc000710000)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0xc0005a9a88?, {0x12ef8f8?, 0xc0000a62a0?}, 0xc00028a970?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc0000a62a0}, 0xc000710000)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc0000a62a0}, 0xc000710000)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000738140, {0x12efaf8, 0xc000094210})
+	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
+created by net/http.(*Server).Serve
+	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
+ERROR	2022/07/19 21:46:55 server.go:3195: http: panic serving [::1]:57180: runtime error: index out of range [0] with length 0
+goroutine 198 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1825 +0xbf
+panic({0x123d620, 0xc000016210})
+	C:/Program Files/Go/src/runtime/panic.go:844 +0x258
+main.(*application).mailForm(0x0?, {0x12ef8f8, 0xc000070000}, 0xc000710200)
+	C:/Users/Lesik/go/src/github.com/alekslesik/snippetbox/cmd/web/handlers.go:332 +0x21e
+net/http.HandlerFunc.ServeHTTP(0x2030001?, {0x12ef8f8?, 0xc000070000?}, 0xc000076210?)
+	C:/Program Files/Go/src/net/http/server.go:2084 +0x2f
+net/http.(*ServeMux).ServeHTTP(0x0?, {0x12ef8f8, 0xc000070000}, 0xc000710200)
+	C:/Program Files/Go/src/net/http/server.go:2462 +0x149
+net/http.serverHandler.ServeHTTP({0x12eec68?}, {0x12ef8f8, 0xc000070000}, 0xc000710200)
+	C:/Program Files/Go/src/net/http/server.go:2916 +0x43b
+net/http.(*conn).serve(0xc000534140, {0x12efaf8, 0xc000094210})
 	C:/Program Files/Go/src/net/http/server.go:1966 +0x5d7
 created by net/http.(*Server).Serve
 	C:/Program Files/Go/src/net/http/server.go:3071 +0x4db
