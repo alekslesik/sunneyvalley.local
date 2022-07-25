@@ -1,5 +1,7 @@
 package page
 
+import "html/template"
+
 // struct with common page data
 type PageData struct {
 	Title       string
@@ -8,18 +10,18 @@ type PageData struct {
 }
 
 // show page Title
-func (page *PageData) GetTitle() string {
-	return "    <title>" + page.Title + "</title>\n"
+func (page *PageData) GetTitle() template.HTML {
+	return template.HTML("<title>" + page.Title + "</title>")
 }
 
 // show page Description
-func (page *PageData) GetDescription() string {
-	return "    <meta name=\"description\" content=\"" + page.Description + "\" />"
+func (page *PageData) GetDescription() template.HTML {
+	return template.HTML("    <meta name=\"description\" content=\"" + page.Description + "\" />")
 }
 
 // show page Keywords
-func (page *PageData) GetKeywords() string {
-	return "    <meta name=\"keywords\" content=\"" + page.Keywords + "\" />"
+func (page *PageData) GetKeywords() template.HTML {
+	return template.HTML("    <meta name=\"keywords\" content=\"" + page.Keywords + "\" />")
 }
 
 // func (page *PageData) ShowMeta() string {
