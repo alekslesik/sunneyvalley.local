@@ -16,12 +16,12 @@ func (page *PageData) GetTitle() template.HTML {
 
 // show page Description
 func (page *PageData) GetDescription() template.HTML {
-	return template.HTML("    <meta name=\"description\" content=\"" + page.Description + "\" />")
+	return template.HTML("<meta name=\"description\" content=\"" + page.Description + "\" />")
 }
 
 // show page Keywords
 func (page *PageData) GetKeywords() template.HTML {
-	return template.HTML("    <meta name=\"keywords\" content=\"" + page.Keywords + "\" />")
+	return template.HTML("<meta name=\"keywords\" content=\"" + page.Keywords + "\" />")
 }
 
 // func (page *PageData) ShowMeta() string {
