@@ -58,12 +58,13 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 				return nil, err
 			}
 
-			// all from /includes
+			// all from template/includes
 			ts, err = ts.ParseGlob(filepath.Join(templateIncludesDir, "*.html"))
 			if err != nil {
 				return nil, err
 			}
 
+			// all components
 			ts, err = ts.ParseGlob(filepath.Join(componentsDir, "*/*.html"))
 			if err != nil {
 				return nil, err
