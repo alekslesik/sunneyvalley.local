@@ -1,0 +1,43 @@
+<div id="proekty_box">
+    <? foreach ($arResult["SECTIONS"] as $keySection => $arSection) :
+			$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_EDIT"));
+			$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], CIBlock::GetArrayByID($arSection["IBLOCK_ID"], "SECTION_DELETE"), array("CONFIRM" => GetMessage('CT_BCSL_ELEMENT_DELETE_CONFIRM'))); ?>
+
+    <? $elemshtml = "";
+			$secid = $arSection["ID"];
+			$blockid = $arSection["IBLOCK_ID"];
+			$arSelect = array("ID", "NAME", "DETAIL_PAGE_URL");
+			$arFilter = array("IBLOCK_ID" => $blockid, "SECTION_ID" => $secid, "ACTIVE" => "Y");
+			$arRes = CIBlockElement::GetList(array(), $arFilter, false, array(), $arSelect);
+			while ($ob = $arRes->GetNextElement()) {
+				$arFields = $ob->GetFields();
+				$elname = $arFields["NAME"];
+				$elurl = $arFields["DETAIL_PAGE_URL"];
+				$elemshtml .= "<li><a href='" . $elurl . "'>" . $elname . "</a></li>";
+			}
+
+			?>
+    <div class="box" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
+        <div class="img">
+            <a href="<?= $arSection[" SECTION_PAGE_URL"] ?>" title="
+                <?= $arSection["NAME"] ?>">
+                <?
+						$file = CFile::ResizeImageGet(($arSection["PICTURE"]), array('width' => 382, 'height' => 200), BX_RESIZE_IMAGE_EXACT, true);
+						echo '<img src="' . $file['src'] . '" alt="' . $arSection["PICTURE"]["ALT"] . '" />';
+						?>
+            </a>
+        </div>
+        <div class="text">
+            <h2><a href="<?= $arSection[" SECTION_PAGE_URL"] ?>">
+                    <?= $arSection["NAME"] ?>
+                </a></h2>
+            <? if ($arSection['UF_TEXT_PROJECTS']) : ?>
+            <div class="class_p">
+                <?= $arSection['UF_TEXT_PROJECTS'] ?>
+            </div>
+            <? endif; ?>
+        </div>
+    </div>
+    <?= (($keySection + 1) % 2 == 0) ? '' : '' ?>
+    <? endforeach; ?>
+</div>
