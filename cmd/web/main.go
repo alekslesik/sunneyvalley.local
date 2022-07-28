@@ -27,7 +27,7 @@ func main() {
 	addr := flag.String("addr", ":80", "Net address HTTP")
 	// new cmd flag for setting MySQL connection
 	// dsn := flag.String("dsn", "web:ndJMv9zrJw@/snippetbox?parseTime=true", "Name of MySQL data source")
-	dsn := flag.String("dsn", "root:Bn7{%14f@/snippetbox?parseTime=true", "Name of MySQL data source")
+	dsn := flag.String("dsn", "root:Bn7{%14f@/sunneyvalley?parseTime=true", "Name of MySQL data source")
 	// call func for extract flag from cmd
 	flag.Parse()
 
