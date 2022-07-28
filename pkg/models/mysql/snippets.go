@@ -4,7 +4,6 @@ import (
 	"database/sql"
 	"errors"
 
-	
 	"github.com/alekslesik/snippetbox/pkg/models"
 )
 
