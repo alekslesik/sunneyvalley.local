@@ -18,7 +18,7 @@ type application struct {
 	gopath        string
 	errorLog      *log.Logger
 	infoLog       *log.Logger
-	snippets      *mysql.SnippetModel // add field for access for our handlers
+	equipments    *mysql.EquipmentModel // add field for access for our handlers
 	templateCache map[string]*template.Template
 }
 
@@ -59,7 +59,7 @@ func main() {
 		errorLog: errorLog,
 		infoLog:  infoLog,
 		// initialise instance and add it in depensenses
-		snippets:      &mysql.SnippetModel{DB: db},
+		equipments:    &mysql.EquipmentModel{DB: db},
 		templateCache: templateCache,
 	}
 

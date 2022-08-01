@@ -7,6 +7,7 @@ type PageData struct {
 	Title       string
 	Description string
 	Keywords    string
+	LeftMenu    bool
 }
 
 // show page Title

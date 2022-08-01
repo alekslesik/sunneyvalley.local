@@ -20,8 +20,7 @@ func (app *application) home(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	p := &page.PageData{Title: "Sunney Valley", Keywords: "home", Description: "home page"}
-
+	p := &page.PageData{Title: "Sunney Valley", Keywords: "home", Description: "home page", LeftMenu: false}
 	app.render(w, r, "home", &templateData{
 		PageData: p,
 	})
@@ -34,8 +33,7 @@ func (app *application) company(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	p := &page.PageData{Title: "About company", Keywords: "about", Description: "about"}
-
+	p := &page.PageData{Title: "About company", Keywords: "about", Description: "about", LeftMenu: false}
 	app.render(w, r, "company", &templateData{
 		PageData: p,
 	})
@@ -48,10 +46,21 @@ func (app *application) equipment(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	p := &page.PageData{Title: "Equipment", Keywords: "equipment", Description: "equipment"}
+	p := &page.PageData{Title: "Equipment", Keywords: "equipment", Description: "equipment", LeftMenu: true}
+
+	dirs, err := app.equipments.Dirs()
+	if err != nil {
+		if errors.Is(err, models.ErrNoRecord) {
+			app.notFound(w)
+		} else {
+			app.serverError(w, err)
+		}
+		return
+	}
 
 	app.render(w, r, "equipment", &templateData{
 		PageData: p,
+		Equipments: dirs,
 	})
 }
 
@@ -63,7 +72,6 @@ func (app *application) services(w http.ResponseWriter, r *http.Request) {
 	}
 
 	p := &page.PageData{Title: "Services", Keywords: "services", Description: "services"}
-
 	app.render(w, r, "services", &templateData{
 		PageData: p,
 	})
@@ -77,7 +85,6 @@ func (app *application) contacts(w http.ResponseWriter, r *http.Request) {
 	}
 
 	p := &page.PageData{Title: "Contacts", Keywords: "contacts", Description: "contacts"}
-
 	app.render(w, r, "contacts", &templateData{
 		PageData: p,
 	})
@@ -95,7 +102,7 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	s, err := app.snippets.Get(id)
+	s, err := app.equipments.Get(id)
 	if err != nil {
 		if errors.Is(err, models.ErrNoRecord) {
 			app.notFound(w)
@@ -106,7 +113,7 @@ func (app *application) showSnippet(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// create instance templateData struct included snippet data
-	data := &templateData{Snippet: s}
+	data := &templateData{Equipment: s}
 
 	// slice with paths to html files
 	files := []string{
@@ -142,7 +149,7 @@ func (app *application) createSnippet(w http.ResponseWriter, r *http.Request) {
 	expires := "7"
 
 	// pass data to method SnippetModel.Insert() and take back created ID
-	id, err := app.snippets.Instert(title, content, expires)
+	id, err := app.equipments.Instert(title, content, expires)
 	if err != nil {
 		app.serverError(w, err)
 		return
@@ -163,15 +170,12 @@ func (app *application) mailForm(w http.ResponseWriter, r *http.Request) {
 	// first parse data from post
 	r.ParseForm()
 
-
 	var formData form.FormData
-
 	formData.SetName(r.PostForm["form_name"][0])
 	formData.SetPhone(r.PostForm["form_phone"][0])
 	formData.SetMessage(r.PostForm["form_message"][0])
 
 	// http.Redirect(w, r, "/en/contacts", http.StatusMovedPermanently)
-
 	w.Header().Set("Content-Type", "application/json")
 	// write the response
 	w.Write([]byte("good"))

@@ -11,9 +11,9 @@ import (
 
 // storage for all dynamic data whitch should pass to HTML patterns
 type templateData struct {
-	PageData *page.PageData
-	Snippet  *models.Snippet
-	Snippets []*models.Snippet
+	PageData   *page.PageData
+	Equipment  *models.Equipment
+	Equipments []*models.Equipment
 }
 
 func newTemplateCache(dir string) (map[string]*template.Template, error) {
@@ -26,7 +26,7 @@ func newTemplateCache(dir string) (map[string]*template.Template, error) {
 	var wg sync.WaitGroup
 
 	// get dir before index.html
-	pages, err := filepath.Glob(filepath.Join(dir, "/*/index.html"))
+	pages, err := filepath.Glob(filepath.Join(dir, "/*/*index.html"))
 	if err != nil {
 		return nil, err
 	}

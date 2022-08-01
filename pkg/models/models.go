@@ -7,10 +7,11 @@ import (
 
 var ErrNoRecord = errors.New("models: matching entry not found")
 
-type Snippet struct {
+type Equipment struct {
 	ID      int
 	Title   string
 	Content string
+	Image string
+	Url string
 	Created time.Time
-	Expires time.Time
 }
