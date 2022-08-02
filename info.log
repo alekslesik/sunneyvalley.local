@@ -1,4 +1,4 @@
-INFO	2022/08/02 20:38:21 Web server start on :80
+INFO	2022/08/02 20:46:53 Web server start on :80
 ERROR	2022/08/01 19:04:34 main.go:78: listen tcp :80: bind: address already in use
 ibute name: "\n                <img src=\""
 goroutine 86 [running]:

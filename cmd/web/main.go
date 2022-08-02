@@ -7,7 +7,7 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"path/filepath"
+	// "path/filepath"
 
 	"github.com/alekslesik/snippetbox/pkg/models/mysql"
 
@@ -78,31 +78,31 @@ func main() {
 	app.errorLog.Fatal(err)
 }
 
-type neuteredFileSystem struct {
-	fs http.FileSystem
-}
+// type neuteredFileSystem struct {
+// 	fs http.FileSystem
+// }
 
-func (nfs neuteredFileSystem) Open(path string) (http.File, error) {
-	f, err := nfs.fs.Open(path)
-	if err != nil {
-		return nil, err
-	}
+// func (nfs neuteredFileSystem) Open(path string) (http.File, error) {
+// 	f, err := nfs.fs.Open(path)
+// 	if err != nil {
+// 		return nil, err
+// 	}
 
-	s, err := f.Stat()
-	if s.IsDir() {
-		index := filepath.Join(path, "index.html")
-		if _, err := nfs.fs.Open(index); err != nil {
-			closeEr := f.Close()
-			if closeEr != nil {
-				return nil, closeEr
-			}
+// 	s, err := f.Stat()
+// 	if s.IsDir() {
+// 		index := filepath.Join(path, "index.html")
+// 		if _, err := nfs.fs.Open(index); err != nil {
+// 			closeEr := f.Close()
+// 			if closeEr != nil {
+// 				return nil, closeEr
+// 			}
 
-			return nil, err
-		}
-	}
+// 			return nil, err
+// 		}
+// 	}
 
-	return f, nil
-}
+// 	return f, nil
+// }
 
 // wrapping sql.Open() and return connection pull sql.DB
 func openDB(dsn string) (*sql.DB, error) {

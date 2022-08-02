@@ -32,7 +32,7 @@ func (app *application) render(w http.ResponseWriter, r *http.Request, name stri
 	// extract pattern depending "name"
 	ts, ok := app.templateCache[name]
 	if !ok {
-		app.serverError(w, fmt.Errorf("Pattern %s not exist!", name))
+		app.serverError(w, fmt.Errorf("pattern %s not exist", name))
 		return
 	}
 
