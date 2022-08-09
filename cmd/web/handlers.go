@@ -59,7 +59,7 @@ func (app *application) equipment(w http.ResponseWriter, r *http.Request) {
 	}
 
 	app.render(w, r, "equipment", &templateData{
-		PageData: p,
+		PageData:   p,
 		Equipments: dirs,
 	})
 }
