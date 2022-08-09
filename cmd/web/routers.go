@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-func (app *application) routes() *http.ServeMux {
+func (app *application) routes() http.Handler {
 	// initialisation new router
 	mux := http.NewServeMux()
 	// registaration handlers
@@ -29,5 +29,5 @@ func (app *application) routes() *http.ServeMux {
 	// mux.Handle("/static", http.NotFoundHandler())
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
-	return mux
+	return app.recoverPanic(app.logRequest(secureHeaders(mux)))
 }
