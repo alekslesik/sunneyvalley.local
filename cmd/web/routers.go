@@ -2,9 +2,14 @@ package main
 
 import (
 	"net/http"
+	"github.com/justinas/alice"
 )
 
 func (app *application) routes() http.Handler {
+
+	// use alice for construct middleware chain
+	middleWares := alice.New(app.recoverPanic, app.logRequest, secureHeaders)
+
 	// initialisation new router
 	mux := http.NewServeMux()
 	// registaration handlers
@@ -17,17 +22,13 @@ func (app *application) routes() http.Handler {
 	mux.HandleFunc("/snippet/create", app.createSnippet)
 	mux.HandleFunc("/mail-form", app.mailForm)
 
-
 	// handle http-requests to static files from "/static"
 	// fileServer := http.FileServer(neuteredFileSystem{http.Dir("C:/Users/Lesik/go/src/snippetbox/ui/static")})
 	fileServer := http.FileServer(http.Dir(app.gopath + "/src/github.com/alekslesik/snippetbox/template/static"))
-
-
-
 
 	// use for registration handle all requests, begining with "/static/"
 	// mux.Handle("/static", http.NotFoundHandler())
 	mux.Handle("/static/", http.StripPrefix("/static", fileServer))
 
-	return app.recoverPanic(app.logRequest(secureHeaders(mux)))
+	return middleWares.Then(mux)
 }
